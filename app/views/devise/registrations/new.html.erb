@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label "ユーザ名" %><br />
-    <%= f.email_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
@@ -20,7 +20,7 @@
 
   <div class="field">
     <%= f.label :prefecture_name, "都道府県" %><br />
-    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, { prompt: '選択してください' }, class: 'form-control'  %>
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, { prompt: '選択してください' } %>
   </div>
 
   <div class="field">

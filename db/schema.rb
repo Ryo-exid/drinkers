@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_03_113358) do
+ActiveRecord::Schema.define(version: 2021_06_03_130920) do
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.string "post_image_id"
+    t.text "caption"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "reset_password_token"
@@ -18,19 +28,17 @@ ActiveRecord::Schema.define(version: 2021_06_03_113358) do
     t.datetime "remember_created_at"
     t.string "name", null: false
     t.date "birth_date", null: false
-    t.string "phone_number", null: false
     t.string "address_city", null: false
     t.string "address_street", null: false
     t.string "address_building", null: false
-    t.boolean "is_deleted", null: false
-    t.string "profile_image_id", null: false
-    t.text "introduction", default: "f", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
     t.string "encrypted_password"
     t.integer "postcode"
     t.integer "prefecture_code"
+    t.string "profile_image_id"
+    t.text "introduction"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
