@@ -34,17 +34,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :name, null: false
       t.date :birth_date, null: false
-      t.string :email, null: false
-      t.string :encrypted_password, null: false
-      t.string :phone_number, null: false
-      t.string :postal_code, null: false
-      t.string :prefecture_code, null: false
+      t.integer :postcode
+      t.integer :prefecture_code
       t.string :address_city, null: false
       t.string :address_street, null: false
       t.string :address_building, null: false
-      t.boolean :is_deleted, null: false
-      t.string :profile_image_id, null: false
-      t.text :introduction, null: false, default: false
+      t.string :profile_image_id
+      t.text :introduction
 
       t.timestamps null: false
     end
