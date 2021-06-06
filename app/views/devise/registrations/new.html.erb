@@ -10,7 +10,7 @@
 
   <div class="field">
     <%= f.label "生年月日" %><br />
-    <%= f.date_select :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1) %>
+    <%= f.date_select :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year), default: Date.new(1996, 1, 1) %>
   </div>
 
   <div class="field">
@@ -37,9 +37,6 @@
     <%= f.label :"建物名" %><br />
     <%= f.text_field :address_building %>
   </div>
-
-
-
 
   <div class="field">
     <%= f.label :email %><br />
