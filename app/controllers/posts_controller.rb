@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :update, :destroy]
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -19,7 +19,12 @@ class PostsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def update
+    @post.update(post_params)
+    redirect_to post_path(@post)
   end
 
   def destroy
