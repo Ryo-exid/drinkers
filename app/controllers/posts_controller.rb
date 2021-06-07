@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :find_post, only: [:show, :update, :destroy]
+  
   def new
     @post = Post.new
   end
@@ -27,5 +29,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :post_image, :caption, :location)
+  end
+  
+  def find_post
+    @post = Post.find(params[:id])
   end
 end

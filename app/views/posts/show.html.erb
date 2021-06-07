@@ -1,2 +1,8 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+  <h1>投稿詳細</h1>
+  <%= attachment_image_tag @post, :post_image, format: "jpeg", size: "200x250" %>
+  <p>タイトル: <%= @post.title %></p>
+  <p>キャプション: <%= @post.caption %></p>
+  <p>場所: <%= @post.location %></p>
+  <p>投稿者: <%= @post.user.name %></p>
+</div>

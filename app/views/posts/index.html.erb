@@ -4,8 +4,8 @@
   <% @posts.each do |post| %>
     <h5>投稿</h5>
     <h5>タイトル</h5>
-    <%= post.title %><br>
-    <%= attachment_image_tag post, :post_image, format: "jpeg", size: "200x300" %>
+    <%= link_to post.title, post_path(post) %><br>
+    <%= attachment_image_tag post, :post_image, format: "jpeg", size: "200x250" %>
     <h5>キャプション</h5>
     <%= post.caption %>
     <h5>場所</h5>
