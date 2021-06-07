@@ -1,16 +1,24 @@
 <div class="container">
   <h1>Posts#index</h1>
   <%= link_to 'Create', new_post_path %>
-  <% @posts.each do |post| %>
-    <h5>投稿</h5>
-    <h5>タイトル</h5>
-    <%= link_to post.title, post_path(post) %><br>
-    <%= attachment_image_tag post, :post_image, format: "jpeg", size: "200x250" %>
-    <h5>キャプション</h5>
-    <%= post.caption %>
-    <h5>場所</h5>
-    <%= post.location %>
-    <h5>投稿者</h5>
-    <%= post.user.name %>
-  <% end %>
+  <div class="d-flex flex-wrap">
+    <% @posts.each do |post| %>
+      <div class="post-box col-md-4">
+        <h5>投稿</h5>
+        <h5>タイトル</h5>
+        <%= link_to post.title, post_path(post) %><br>
+        <%= attachment_image_tag post, :post_image, format: "jpeg", size: "250x300" %>
+        <h5>キャプション</h5>
+        <%= post.caption %>
+        <h5>場所</h5>
+        <%= post.location %>
+        <h5>投稿者</h5>
+        <%= post.user.name %>
+      </div>
+    <% end %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= paginate @posts %>
+  </div>
+
 </div>
