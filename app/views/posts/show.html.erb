@@ -5,4 +5,7 @@
   <p>キャプション: <%= @post.caption %></p>
   <p>場所: <%= @post.location %></p>
   <p>投稿者: <%= @post.user.name %></p>
+  <% if @post.user == current_user %>
+    <%= link_to "削除", post_path(@post), method: :delete %>
+  <% end %>
 </div>
