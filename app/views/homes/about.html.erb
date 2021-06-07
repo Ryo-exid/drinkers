@@ -1,2 +1,15 @@
-<h1>Homes#about</h1>
-<p>Find me in app/views/homes/about.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>Drinker × Drinker へようこそ！</h1>
+      <p class="my-5">
+        当サイトは、お酒好きのあなたの為のサイトです。<br>
+        こんなお酒が美味しい、広めたいといった正直な感想などを気軽に投稿し、<br>
+        お酒好き同士の輪を広めていきましょう！
+      </p>
+      <div class="new-user-link">
+        <%= link_to "会員登録", new_user_registration_path %> | <%= link_to "ログイン", new_user_session_path %>
+      </div>
+    </div>
+  </div>
+</div>
