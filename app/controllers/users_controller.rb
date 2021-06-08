@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_user, only: [:show, :edit, :update]
 
   def index
@@ -8,6 +9,9 @@ class UsersController < ApplicationController
   end
 
   def edit
+    unless @user.id == current_user.id
+      redirect_to user_path(current_user)
+    end
   end
 
   def update

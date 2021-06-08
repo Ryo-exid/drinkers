@@ -1,7 +1,7 @@
 <div class="container">
   <h2>投稿編集</h2>
   <%= attachment_image_tag @post, :post_image, format: "jpeg", size: "200x250" %>
-  <%= form_with model: @post, local:true do |f| %>
+  <%= form_with model: @post, local: true do |f| %>
     <div class="form-group">
       <%= f.label "タイトル" %>
       <%= f.text_field :title %>

@@ -1,6 +1,5 @@
 <div class="container">
   <h2>ユーザ情報編集</h2>
-  <%= attachment_image_tag @user, :profile_image, format: "jpeg", size: "200x250" %>
   <%= form_with model: @user, local:true do |f| %>
     <div class="form-group">
       <%= f.attachment_field :profile_image %>
