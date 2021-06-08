@@ -1,1 +1,22 @@
-<h1>Homes#top</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center">
+        <h1>Drinker × Drinker</h1>
+        <h5 class="my-2">お酒専門のSNSサイト</h5>
+      </div>
+      <h3>新着順</h3>
+      <div class="d-flex flex-wrap justify-content-center">
+        <% @posts.each do |post| %>
+          <div class="post-box col-md-4 my-4">
+            <p>タイトル: <%= link_to post.title, post_path(post) %><p>
+            <%= attachment_image_tag post, :post_image, format: "jpeg", size: "250x300", class: "d-block mx-auto" %>
+            <p>キャプション: <%= post.caption %></p>
+            <p>場所: <%= post.location %></p>
+            <p>投稿者: <%= post.user.name %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
