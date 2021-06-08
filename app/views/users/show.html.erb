@@ -1,2 +1,33 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <p class="user-profile-name"><%= @user.name %></p>
+  <div class="user-profile">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6">
+        <%= attachment_image_tag @user, :profile_image, size:"200x200", fallback: "no_image.jpg", class:"mt-3 rounded-circle d-block mx-auto" %>
+      </div>
+
+      <div class="col-md-2 my-5">
+        <h5>投稿数</h5>
+        <h5>フォロー</h5>
+        <h5>フォロワー</h5>
+        <h5>総いいね数</h5>
+      </div>
+
+      <div class="col-md-2 my-5">
+        <%= @user.posts.count %>
+      </div>
+    </div>
+
+    <p class="introduction">自己紹介</p>
+    <div class="border border-dark introduction-border">
+      <%= @user.introduction %>
+    </div>
+
+    <% if @user.id = current_user.id %>
+      <div class="text-center my-5">
+        <%= link_to "編集する", edit_user_path(@user), class: "btn btn-lg btn-outline-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
