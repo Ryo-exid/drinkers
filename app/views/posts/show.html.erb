@@ -10,7 +10,14 @@
     <%= render "favorites/favorite-btn", post: @post %>
   </p>
   <p>投稿者: <%= @post.user.name %></p>
-  <p>コメント数: <%= @post.post_comments.count %></p>
-
-  <%= render "post_comments/comment", post: @post, post_comment: @post_comment %>
+  <p id="comments-count">コメント数: <%= @post.post_comments.count %></p>
+  <p id="reply_<%= @post.id %>">
+    <%= render partial: "post_comments/comment", locals: {post: @post, post_comment: @post_comment} %>
+  </p>
+  <% if user_signed_in? %>
+    <%= form_with model: [@post, @post_comment], remote: true do |f| %>
+      <%= f.text_area :comment, size: "50x5" %><br>
+      <%= f.submit "送信" %>
+    <% end %>
+  <% end %>
 </div>

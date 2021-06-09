@@ -11,15 +11,8 @@
     </div>
     <div class="col-md-1 my-3 d-flex align-items-end">
       <% if current_user == post_comment.user %>
-        <%= link_to "削除", post_post_comment_path(post_comment.post_id, post_comment.id), class: "btn-sm btn btn-outline-danger", method: :delete %>
+        <%= link_to "削除", post_post_comment_path(post_comment.post_id, post_comment.id), remote: true, class: "btn-sm btn btn-outline-danger", method: :delete %>
       <% end %><br>
     </div>
   </div>
-<% end %>
-
-<% if user_signed_in? %>
-  <%= form_with model: [post, post_comment], local:true do |f| %>
-    <%= f.text_area :comment, size: "50x5" %><br>
-    <%= f.submit "送信" %>
-  <% end %>
 <% end %>
