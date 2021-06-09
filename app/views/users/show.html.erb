@@ -26,7 +26,6 @@
       <%= @user.introduction %>
     </div>
 
-
     <% if @user.id == current_user.id %>
       <div class="text-center my-5">
         <%= link_to "編集する", edit_user_path(current_user.id), class: "btn btn-lg btn-outline-success" %>

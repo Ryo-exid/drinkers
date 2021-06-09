@@ -12,6 +12,7 @@
             <p class="favorited-btn">
               いいね： <%= render "favorites/favorite-btn", post: post %>
             </p>
+            <p>コメント数: <%= post.post_comments.count %></p>
             <p>投稿者: <%= link_to post.user.name, user_path(post.user.id) %></p>
           </div>
         <% end %>
