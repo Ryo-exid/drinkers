@@ -4,6 +4,9 @@
   <p>タイトル: <%= @post.title %></p>
   <p>キャプション: <%= @post.caption %></p>
   <p>場所: <%= @post.location %></p>
+  <p class="favorite-btn">
+    いいね： <%= render "favorites/favorite-btn", post: @post %>
+  </p>
   <p>投稿者: <%= @post.user.name %></p>
   <% if @post.user == current_user %>
     <%= link_to "編集する", edit_post_path(@post) %>
