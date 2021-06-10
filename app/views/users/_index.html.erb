@@ -1,5 +1,5 @@
 <div class="container">
-  <% @users.each do |user| %>
+  <% users.each do |user| %>
     <div class="row">
       <div class="col-md-1 my-3 text-center">
         <%= link_to user_path(user) do %>
@@ -11,10 +11,10 @@
         <%= user.introduction %>
       </div>
       <div class="col-md-2 my-3 d-flex align-items-center">
-        フォロー数: <%= @user.followings.count %>
+        フォロー数: <%= user.followings.count %>
       </div>
       <div class="col-md-2 my-3 d-flex align-items-center">
-        フォロワー数: <%= @user.followers.count %>
+        フォロワー数: <%= user.followers.count %>
       </div>
     </div>
   <% end %>

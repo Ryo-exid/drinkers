@@ -1,0 +1,16 @@
+<% if @range == "投稿" %>
+  <h2> 投稿検索結果 </h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <%= link_to 'Create', new_post_path, class: "btn btn-outline-success" %>
+        <div class="d-flex flex-wrap justify-content-center">
+          <%= render "posts/index", posts: @posts %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <h2> ユーザ検索結果 </h2>
+  <%= render "users/index", users: @users %>
+<% end %>

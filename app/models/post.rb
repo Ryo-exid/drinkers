@@ -4,7 +4,23 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :post_comments, dependent: :destroy
 
+  # いいね機能
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
+  end
+
+  # 投稿タイトル検索
+  def self.looks(search, word)
+    if search == "perfect_match"
+      @post = Post.where("title LIKE?", "#{word}")
+    elsif search == "forward_match"
+      @post = Post.where("title LIKE?", "#{word}%")
+    elsif search == "back_word_match"
+      @post = Post.where("title LIKE?", "%#{word}")
+    elsif search == "partial_match"
+      @post = Post.where("title LIKE?", "%#{word}%")
+    else
+      @post = Post.all
+    end
   end
 end
