@@ -17,7 +17,7 @@
               <%= render "favorites/favorite-btn", post: post %>
             </div>
             <p>コメント数: <%= post.post_comments.count %></p>
-            <p>投稿者: <%= post.user.name %></p>
+            <p>投稿者: <%= link_to post.user.name, user_path(post.user.id) %></p>
           </div>
         <% end %>
       </div>

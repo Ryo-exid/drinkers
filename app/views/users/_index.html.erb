@@ -1,0 +1,21 @@
+<div class="container">
+  <% @users.each do |user| %>
+    <div class="row">
+      <div class="col-md-1 my-3 text-center">
+        <%= link_to user_path(user) do %>
+          <%= attachment_image_tag user, :profile_image, size:"60x60", fallback: "no_image.jpg", class:"mt-3 rounded-circle" %><br>
+          <%= user.name %>
+        <% end %>
+      </div>
+      <div class="col-md-5 my-3 d-flex align-items-center">
+        <%= user.introduction %>
+      </div>
+      <div class="col-md-2 my-3 d-flex align-items-center">
+        フォロー数: <%= @user.followings.count %>
+      </div>
+      <div class="col-md-2 my-3 d-flex align-items-center">
+        フォロワー数: <%= @user.followers.count %>
+      </div>
+    </div>
+  <% end %>
+</div>
