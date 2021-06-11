@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :post_comments, dependent: :destroy
+  has_many :user_rooms
+  has_many :chats, dependent: :destroy
+  has_many :rooms, through: :user_rooms
 
   # フォローフォロワー機能
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy

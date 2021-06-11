@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'chats/show'
   root "homes#top"
   get "homes/about" => "homes#about"
   get "search" => "search#search"
@@ -12,4 +13,6 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
+  get "chat/:id" => "chats#show", as: "chat"
+  resources :chats, only: [:create, :destroy]
 end
