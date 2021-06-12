@@ -56,4 +56,9 @@ class User < ApplicationRecord
   def prefecture_name=(prefecture_name)
     self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
   end
+
+  # 退会したユーザはログインできない
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
 end

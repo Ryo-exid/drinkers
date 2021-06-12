@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   end
   get "chat/:id" => "chats#show", as: "chat"
   resources :chats, only: [:create, :destroy]
+
+  put "/users/:id/hide" => "users#hide", as: 'users_hide'
 end
