@@ -14,16 +14,22 @@ class ChatsController < ApplicationController
     end
     @chats = @room.chats
     @chat = Chat.new(room_id: @room.id)
+    @@messenger = @user.id
   end
 
   def create
     @chat = current_user.chats.new(chat_params)
     @chat.save
-  end
-
-  def destroy
-  #   @chat = current_user.chats.find(params[:id])
-  #   @chat.destroy
+    messenger_id = @@messenger
+    user = User.find(messenger_id)
+    temp = Notification.where(["visited_id = ? and visited_id = ? and action = ?", current_user.id, user.id, "chat"])
+    if temp.blank?
+      notification = user.passive_notifications.new(
+        visiter_id: current_user.id,
+        action: "chat"
+      )
+      notification.save
+    end
   end
 
   private

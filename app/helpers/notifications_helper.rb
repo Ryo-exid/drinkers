@@ -13,6 +13,8 @@ module NotificationsHelper
       when "post_comment" then
         @post_comment = PostComment.find_by(id: @visiter_post_comment)&.comment
         tag.a(@visiter.name, href:user_path(@visiter), style:"font-weight: bold;")+"が"+tag.a('あなたの投稿', href:post_path(notification.post_id), style:"font-weight: bold;")+"にコメントしました"
+      when "chat" then
+        tag.a(notification.visiter.name, href:user_path(@visiter), style:"font-weight: bold;")+"があなたにダイレクトメッセージを送信しました"
     end
   end
   # 未確認の通知がある時はマークで知らせる
