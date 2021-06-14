@@ -5,7 +5,11 @@ class PostCommentsController < ApplicationController
     @post_comment = PostComment.new(post_comment_params)
     @post_comment.post_id = @post.id
     @post_comment.user_id = current_user.id
-    @post_comment.save
+    if @post_comment.save
+      # 通知の作成
+      @post_comment.post.create_notification_comment!(current_user, @post_comment.id)
+      respond_to :js
+    end
   end
 
   def destroy

@@ -21,4 +21,10 @@ Rails.application.routes.draw do
   resources :chats, only: [:create, :destroy]
 
   put "/users/:id/hide" => "users#hide", as: 'users_hide'
+
+  resources :notifications, only: [:index, :destroy_all] do
+    collection do
+      delete 'destroy_all'
+    end
+  end
 end
