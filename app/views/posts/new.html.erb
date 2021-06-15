@@ -1,14 +1,4 @@
 <div class="container">
   <h1>画像投稿フォーム</h1>
-  <%= form_with model: @post, local:true do |f| %>
-    <h4>画像</h4>
-    <%= f.attachment_field :post_image %>
-    <h4>タイトル</h4>
-    <%= f.text_field :title %>
-    <h4>キャプション</h4>
-    <%= f.text_area :caption %>
-    <h4>場所</h4>
-    <%= f.text_area :location %>
-    <%= f.submit '投稿' %>
-  <% end %>
+  <%= render "post_form", post: @post %>
 </div>

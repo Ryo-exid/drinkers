@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_14_151214) do
+ActiveRecord::Schema.define(version: 2021_06_13_144101) do
 
   create_table "chats", force: :cascade do |t|
     t.integer "user_id"
@@ -45,12 +45,12 @@ ActiveRecord::Schema.define(version: 2021_06_14_151214) do
     t.integer "visited_id"
     t.integer "post_id"
     t.integer "post_comment_id"
+    t.integer "chat_id"
+    t.integer "room_id"
     t.string "action"
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "chat_id"
-    t.integer "room_id"
   end
 
   create_table "post_comments", force: :cascade do |t|
@@ -62,11 +62,12 @@ ActiveRecord::Schema.define(version: 2021_06_14_151214) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
-    t.string "post_image_id"
-    t.text "caption"
-    t.string "location"
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.string "post_image_id", null: false
+    t.text "caption", null: false
+    t.string "location", null: false
+    t.float "rate", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

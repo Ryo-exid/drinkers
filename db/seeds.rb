@@ -17,6 +17,7 @@ end
     title: "焼き芋焼酎#{n + 1}",
     post_image: File.open("./app/assets/images/alcohol4.jpg"),
     caption: "焼酎好きに教えてもらいましたー！香ばしくて美味しい！",
+    rate: 4.5,
     location: "渋谷",
   )
 end
@@ -27,6 +28,7 @@ end
     title: "Barで飲んでます#{n + 1}",
     post_image: File.open("./app/assets/images/alcohol6.jpg"),
     caption: "おいしい",
+    rate: 3.5,
     location: "新宿",
   )
 end
@@ -37,6 +39,7 @@ end
     title: "GODIVA！#{n + 1}",
     post_image: File.open("./app/assets/images/alcohol1.jpg"),
     caption: "GODIVAのリキュール飲んでみました！",
+    rate: 3,
     location: "渋谷",
   )
 end
@@ -47,6 +50,7 @@ end
     title: "魔王！！#{n + 1}",
     post_image: File.open("./app/assets/images/alcohol2.jpg"),
     caption: "最高級焼酎！美味い！！！",
+    rate: 5,
     location: "新宿",
   )
 end
@@ -57,6 +61,7 @@ end
     title: "十四代！！#{n + 1}",
     post_image: File.open("./app/assets/images/alcohol3.jpg"),
     caption: "1杯で1500円！",
+    rate: 4,
     location: "新宿",
   )
 end
@@ -67,6 +72,7 @@ end
     title: "やっぱりビール！！#{n + 1}",
     post_image: File.open("./app/assets/images/alcohol5.jpg"),
     caption: "仕事終わりキンキンに冷えたビール！最高です！！！",
+    rate: 5,
     location: "渋谷",
   )
 end
