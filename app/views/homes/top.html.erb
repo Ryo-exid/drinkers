@@ -13,30 +13,29 @@
             <div class="my-3">
               <h4 class="text-center">第<%= i %>位</h4>
               <div class="ranking-post-box">
-                <p>タイトル: <%= link_to post.title, post_path(post) %><p>
+                <p>タイトル: <%= link_to post.title, post_path(post), data: {"turbolinks"=>false} %><p>
                 <%= attachment_image_tag post, :post_image, format: "jpeg", size: "250x300", class: "d-block mx-auto" %>
                 <p>キャプション: <%= post.caption %></p>
-
-                <div id="star-rate-<%= post.id %>">
+                <div id="star-rate-<%= post.id %>" class="star">
                   <span class="mr-3">レビュー：<%= post.rate %></span>
                 </div>
                 <script>
-                $('#star-rate-<%= post.id %>').raty({
-                  size: 15,
-                  starOff: '<%= asset_path('star-off.png') %>',
-                  starOn: '<%= asset_path('star-on.png') %>',
-                  starHalf: '<%= asset_path('star-half.png') %>',
-                  half: true,
-                  readOnly: true,
-                  score: <%= post.rate %>,
-                });
+                  $("#star-rate-<%= post.id %>").raty({
+                    size: 1,
+                    starOff: "<%= asset_path('star-off.png') %>",
+                    starOn: "<%= asset_path('star-on.png') %>",
+                    starHalf: "<%= asset_path('star-half.png') %>",
+                    half: true,
+                    readOnly: true,
+                    score: "<%= post.rate %>",
+                  });
                 </script>
                 <p>場所: <%= post.location %></p>
                 <div id="favorite_btn_<%= post.id %>">
                   <%= render "favorites/favorite-btn", post: post %>
                 </div>
                 <p>コメント数: <%= post.post_comments.count %></p>
-                <p>投稿者: <%= link_to post.user.name, user_path(post.user.id) %></p>
+                <p>投稿者: <%= link_to post.user.name, user_path(post.user.id), data: {"turbolinks"=>false} %></p>
               </div>
             </div>
           <% end %>

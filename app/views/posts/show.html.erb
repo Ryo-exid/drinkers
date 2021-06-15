@@ -5,6 +5,20 @@
   <%= attachment_image_tag @post, :post_image, format: "jpeg", size: "200x250" %>
   <p>タイトル: <%= @post.title %></p>
   <p>キャプション: <%= @post.caption %></p>
+  <div id="star-rate-<%= @post.id %>" class="star">
+    <span class="mr-3">レビュー：<%= @post.rate %></span>
+  </div>
+  <script>
+    $("#star-rate-<%= @post.id %>").raty({
+      size: 1,
+      starOff: "<%= asset_path('star-off.png') %>",
+      starOn: "<%= asset_path('star-on.png') %>",
+      starHalf: "<%= asset_path('star-half.png') %>",
+      half: true,
+      readOnly: true,
+      score: "<%= @post.rate %>",
+    });
+  </script>
   <p>場所: <%= @post.location %></p>
   <div id="favorite_btn_<%= @post.id %>" class="favorite-btn">
     <%= render "favorites/favorite-btn", post: @post %>
