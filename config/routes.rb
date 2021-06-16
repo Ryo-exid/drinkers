@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   resources :notifications, only: [:index, :destroy_all] do
     collection do
-      delete 'destroy_all'
+      delete 'destroy_all' # 通知全削除
     end
   end
 end
