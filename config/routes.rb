@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
+    namespace :admin do
+      resources :posts, only: [:index, :show, :destroy]
+    end
   end
   get "chat/:id" => "chats#show", as: "chat"
   resources :chats, only: [:create, :destroy]

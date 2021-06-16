@@ -33,5 +33,11 @@
       <%= f.text_area :comment, size: "50x5" %><br>
       <%= f.submit "送信" %>
     <% end %>
+
+    <% if current_user.admin? %>
+      <div class="text-right">
+        <%= link_to "削除する", post_path(@post), method: :delete, class: "btn btn-warning", "data-confirm" => "該当ユーザの投稿を本当に削除しますか？" %>
+      </div>
+    <% end %>
   <% end %>
 </div>

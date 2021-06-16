@@ -1,6 +1,7 @@
+# エンドユーザ
 3.times do |n|
   User.create!(
-    name: "ユーザ#{n + 1}",
+    name: "User#{n + 1}",
     birth_date: "1996-1-1",
     email: "test#{n + 1}@test.com",
     postcode: 111111,
@@ -11,6 +12,22 @@
   )
 end
 
+# 管理者権限を持たせたユーザ（管理人）
+1.times do |n|
+  User.create!(
+  name: ENV["ADMIN_NAME"],
+  birth_date: "1996-1-1",
+  email: ENV["ADMIN_EMAIL"],
+  postcode: 111111,
+  address_city: "台東区",
+  address_street: "1-1-1",
+  address_building: "drinker",
+  password: ENV["ADMIN_PASSWORD"],
+  admin: true
+  )
+end
+
+# 投稿サンプル
 2.times do |n|
   Post.create!(
     user_id: 1,
