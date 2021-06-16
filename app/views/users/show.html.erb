@@ -43,6 +43,13 @@
       <% if @user.id == current_user.id %>
         <div class="text-center my-5">
           <%= link_to "編集する", edit_user_path(current_user.id), class: "btn btn-lg btn-outline-success" %>
+        </div>
+      <% end %>
+
+      <% if current_user.admin? && @user.id != current_user.id %>
+        <div class="text-right my-5">
+          <%= link_to "退会させる", user_admin_users_hide_path(@user), method: :put, "data-confirm" => "該当ユーザを本当に退会させますか？", class: "btn btn-warning my-5" %>
+        </div>
       <% end %>
     <% end %>
   </div>

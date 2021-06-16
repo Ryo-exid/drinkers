@@ -12,12 +12,15 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
     get "followings" => "relationships#followings", as: "followings"
     get "followers" => "relationships#followers", as: "followers"
+    namespace :admin do
+      put "/users/:id/hide" => "users#hide", as: 'users_hide'
+    end
   end
   resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
     namespace :admin do
-      resources :posts, only: [:index, :show, :destroy]
+      resources :posts, only: [:destroy]
     end
   end
   get "chat/:id" => "chats#show", as: "chat"

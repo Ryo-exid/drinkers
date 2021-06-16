@@ -1,10 +1,12 @@
-class Admin::PostsController < ApplicationController
+class Admin::UsersController < ApplicationController
   before_action :if_not_admin
 
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
+  # 退会
+  def hide
+    @user = User.find(params[:id])
+    @user.update(is_deleted: true)
+    flash[:notice] = "該当ユーザを退会させました。"
+    redirect_to root_path
   end
 
   private
