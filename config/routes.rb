@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :controllers
-  get 'chats/show'
+  
   root "homes#top"
   get "homes/about" => "homes#about"
   get "search" => "search#search"
+  get 'inquiry' => 'inquiry#index' # お問い合わせ
+  post 'inquiry/confirm' => 'inquiry#confirm' # 確認画面
+  post 'inquiry/complete' => 'inquiry#complete' # 送信完了画面
+  
   devise_for :users, controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations"
   }
+  
   resources :users do
     resource :relationships, only: [:create, :destroy]
     get "followings" => "relationships#followings", as: "followings"
@@ -26,7 +30,7 @@ Rails.application.routes.draw do
   get "chat/:id" => "chats#show", as: "chat"
   resources :chats, only: [:create, :destroy]
 
-  put "/users/:id/hide" => "users#hide", as: 'users_hide'
+  put "/users/:id/hide" => "users#hide", as: 'users_hide' # 退会
 
   resources :notifications, only: [:index, :destroy_all] do
     collection do
