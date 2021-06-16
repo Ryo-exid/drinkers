@@ -1,23 +1,21 @@
-<h3><%= @inquiry.name %>様<h3>
-<h4>
-  この度はお問い合わせ頂き、誠にありがとうございます。
-</h4>
-
-<div class="my-3">
-  <h4>お問い合わせ内容</h4>
-</div>
-<hr>
-<div class="my-8">
-  <h4>Name: <%= @inquiry.name %></h4>
-  <h4>Email: <%= @inquiry.email %></h4>
-  <h4>Message</h4>
-  <%= @inquiry.message %>
-</div>
-<hr>
-
-<h4 class="my-8">
-  お問い合わせいただいた内容は、順次確認させて頂いております。</br>
-  ご対応に日数を要する場合がございますが、<br>
-  何卒ご容赦くださいますようお願い申し上げます。
-</h4>
-<h4 class="my-5">今後とも Drinker × Drinker を宜しくお願い致します。</h4>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Drinker × Drinker</h1>
+    <div class="my-3">
+      <h2>お問い合わせ内容</h2>
+    </div>
+    <hr>
+    <div class="my-8">
+      <h2>
+        Name: <%= @inquiry.name %><br>
+        Email: <%= @inquiry.email %><br>
+        Message: <%= @inquiry.message %>
+      </h2>
+    </div>
+    <hr>
+  </body>
+</html>
