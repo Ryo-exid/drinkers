@@ -13,6 +13,12 @@ ja:
         rate: レビュー
         location: 場所
       user:
+        name: ユーザ名
+        postcode: 郵便番号
+        address_city: 市区町村
+        address_street: 番地
+        address_building: 建物名
+
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻

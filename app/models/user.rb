@@ -4,6 +4,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :name, {presence: {message: "を入力してください（20文字以内）"}, length: {maximum:20}}
+  validates :birth_date, :address_city, :address_street, :address_building, presence: true
+  validates :postcode, {length: {is: 7}, numericality: {only_integer: true}}
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, {presence: true, uniqueness: true, format: {with: VALID_EMAIL_REGEX}}
+
+  VALID_PASSWORD_REGEX = /\A[\w\-]+\z/ # 先頭から末尾まで、全て「a-zA-Z0-9_」と「-」にマッチする文字列を許容
+  validates :password, {confirmation: true, length: {minimum: 6}, format: {with: VALID_PASSWORD_REGEX, message: "は半角英数字で入力してください（ハイフンも使用できます)"}}
+  validates :password_confirmation, presence: true
+
   attachment :profile_image
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
