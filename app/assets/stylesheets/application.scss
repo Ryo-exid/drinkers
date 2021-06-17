@@ -21,6 +21,7 @@ footer {
   height: 100px;
 }
 
+// ページ機能
 .pagination a {
   background-color: yellow;
 }
@@ -33,10 +34,12 @@ footer {
   font-family: "nunito", sans-selif;
 }
 
+// フラッシュメッセージ
 .notice {
  color: green;
 }
 
+// レビュー評価機能の星マーク
 .star img {
   width: 20px;
   height: 20px;
