@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :birth_date, :address_city, :address_street, :address_building, presence: true
   validates :postcode, {length: {is: 7}, numericality: {only_integer: true}}
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i # 正規表現
   validates :email, {presence: true, uniqueness: true, format: {with: VALID_EMAIL_REGEX}}
 
   VALID_PASSWORD_REGEX = /\A[\w\-]+\z/ # 先頭から末尾まで、全て「a-zA-Z0-9_」と「-」にマッチする文字列を許容
