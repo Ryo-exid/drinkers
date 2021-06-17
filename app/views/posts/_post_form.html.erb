@@ -1,5 +1,5 @@
 <%= form_with model: post, local:true do |f| %>
-
+  <%= render "layouts/form_error_messages", model: f.object %>
   <div class="form-group row">
     <%= f.label :post_image, '画像 ', class:'col-md-3 col-form-label' %>
     <%= f.attachment_field :post_image %>

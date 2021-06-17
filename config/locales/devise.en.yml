@@ -6,6 +6,12 @@ ja:
         name: 名前
         email: メールアドレス
         message: お問い合わせ内容
+      post:
+        post_image: 画像
+        title: タイトル
+        caption: キャプション
+        rate: レビュー
+        location: 場所
       user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
