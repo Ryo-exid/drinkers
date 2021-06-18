@@ -22,6 +22,10 @@ html {
   min-height: 100%;
 }
 
+header {
+  z-index: 1;
+}
+
 .wrapper {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -30,6 +34,23 @@ html {
 #header-fixed {
   position: fixed;
   width: 100%;
+  background-color: #E6FFE9;
+}
+
+.nav-item {
+  margin-top: 8px;
+}
+
+.nav-inquiry{
+  margin-top: 5px;
+}
+
+.application-title {
+  font-style: italic;
+  font-family: cursive;
+  font-size: 30px;
+  font-weight: 900;
+  margin-left: 100px;
 }
 
 footer {
