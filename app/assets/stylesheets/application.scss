@@ -53,6 +53,16 @@ footer {
   }
 }
 
+// アカウント作成時のエラーメッセージ
+.sign-up-errors {
+  color: #9966FF;
+}
+
+// ログイン時のエラーメッセージ
+.login-flash-message {
+  color: #FF3399;
+}
+
 // ドロップダウンキー
 select {
   /* styling */
@@ -65,7 +75,7 @@ select {
   padding: 0em 3em 0em 1em;
 
   /* reset */
-  
+
   margin: 0 5px 0 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -74,7 +84,7 @@ select {
   -moz-appearance: none;
 
   /* arrows */
-  
+
   background-image:
     linear-gradient(45deg, transparent 50%, green 50%),
     linear-gradient(135deg, green 50%, transparent 50%),
@@ -89,9 +99,3 @@ select {
     2.5em 2.5em;
   background-repeat: no-repeat;
 }
-
-// アカウント作成時のエラーメッセージ
-.sign-up-errors {
-  color: #9966FF;
-}
-
