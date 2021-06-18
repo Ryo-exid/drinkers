@@ -8,7 +8,6 @@
       <% unless @all_ranks.empty? %>
         <h2>ランキング順</h2>
         <div class="d-flex flex-wrap justify-content-around">
-
           <% @all_ranks.each.with_index(1) do |post, i| %>
             <div class="my-3">
               <h4 class="text-center">第<%= i %>位</h4>

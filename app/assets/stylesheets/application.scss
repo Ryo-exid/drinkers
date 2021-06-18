@@ -17,6 +17,21 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.wrapper {
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+
+#header-fixed {
+  position: fixed;
+  width: 100%;
+}
+
 footer {
   height: 100px;
 }
