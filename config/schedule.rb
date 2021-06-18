@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + "/environment")
 rails_env = Rails.env.to_sym
 set :environment, rails_env
 set :output, 'log/cron.log'
-every 1.mon do
+every 1.month do
   begin
     runner "Batch::SendMail.itself.send_mail"
   rescue => e
