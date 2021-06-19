@@ -7,23 +7,23 @@
           <h5 class="application-title-sub my-2">お酒専門のSNSサイト</h5>
         </div>
         <% unless @all_ranks.empty? %>
-          <div class="fas fa-crown mt-5 mb-3">
+          <div class="fas fa-crown mt-5 mb-1">
             <spam class="ranking-title"> Ranking</span>
           </div>
           <div class="d-flex flex-wrap justify-content-around col-12">
             <% @all_ranks.each.with_index(1) do |post, i| %>
-              <div class="my-4 col-9 h-auto">
+              <div class="my-5 col-9 h-auto">
                 <h4 class="text-center ranking-order">第<%= i %>位</h4>
                 <div class="ranking-post-box">
                   <div class="ml-3 mt-2 form-inline">
                     <%= link_to user_path(post.user) do %>
-                      <%= attachment_image_tag post.user, :profile_image, size:"60x60", fallback: "no_image.jpg", class:"rounded-circle mr-4" %>
+                      <%= attachment_image_tag post.user, :profile_image, size: "60x60", fallback: "no_image.jpg", class:"rounded-circle mr-4" %>
                     <% end %>
                     <p class="post-user-name mt-3"><%= post.user.name %></p>
                   </div>
                   <hr style="margin-top: 10px;">
                   <p>タイトル: <%= link_to post.title, post_path(post), data: {"turbolinks"=>false} %><p>
-                  <%= attachment_image_tag post, :post_image, format: "jpeg", size: "250x300", class: "d-block mx-auto" %>
+                    <%= attachment_image_tag post, :post_image, format: "jpeg", size: "400", class: "img-responsive rounded d-block mx-auto" %>
                   <p>キャプション: <%= post.caption %></p>
                   <div id="star-rate-<%= post.id %>" class="star">
                     <span class="mr-3">レビュー：<%= post.rate %></span>

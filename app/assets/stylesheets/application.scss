@@ -146,3 +146,9 @@ select {
     2.5em 2.5em;
   background-repeat: no-repeat;
 }
+
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
