@@ -1,7 +1,32 @@
+.top-page {
+  background-color: #F5FFFA;
+}
+
 .ranking-post-box {
   width: 500px;
   height: 600px;
   border: 2px solid #7f4600;
   border-radius: 10px;
   margin: 0 20px 0 20px;
+}
+
+.application-title-top {
+  display: inline-block;
+  font-style: italic;
+  font-family: cursive;
+  font-size: 70px;
+  font-weight: 900;
+  color: #FFFF11;
+  text-shadow: 2px 2px 10px #005FFF;
+}
+
+.application-title-sub {
+  font-family: serif;
+  font-weight: bold;
+  color: white;
+  text-shadow:
+   1px 1px 0px #000, -1px -1px 0px #000,
+   -1px 1px 0px #000,  1px -1px 0px #000,
+   1px 0px 0px #000, -1px  0px 0px #000,
+   0px 1px 0px #000,  0px -1px 0px #000;
 }
