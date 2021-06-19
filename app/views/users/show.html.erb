@@ -1,64 +1,66 @@
-<%= render "search/search" %>
-<div class="container">
-  <p class="user-profile-name"><%= @user.name %></p>
-  <% if user_signed_in? %>
-    <div class="text-right">
-      <% if @user.id != current_user.id %>
-        <%= link_to "DM", chat_path(@user.id), class: "btn-lg btn btn-outline-info" %>
-      <% end %>
-    </div>
-  <% end %>
-  <div class="user-profile">
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-6">
-        <%= attachment_image_tag @user, :profile_image, size:"200x200", fallback: "no_image.jpg", class:"mt-3 rounded-circle d-block mx-auto" %>
-      </div>
-
-      <div class="col-md-2 my-5">
-        <h5>投稿数</h5>
-        <h5>フォロー</h5>
-        <h5>フォロワー</h5>
-        <h5>総いいね数</h5>
-      </div>
-
-      <div class="col-md-2 my-5">
-        <h5><%= @user.posts.count %></h5>
-        <h5><%= link_to @user.followings.count, user_followings_path(@user) %></h5>
-        <h5><%= link_to @user.followers.count, user_followers_path(@user) %></h5>
-        <h5><%= @user.favorites.count %></h5>
-      </div>
-    </div>
-
+<div class="user-details-page my-5">
+  <%= render "search/search" %>
+  <div class="container">
+    <p class="user-profile-name"><%= @user.name %></p>
     <% if user_signed_in? %>
-      <div class="follow_btn text-right col-md-9">
-        <%= render "relationships/follow-btn", user: @user %>
+      <div class="text-right">
+        <% if @user.id != current_user.id %>
+          <%= link_to "DM", chat_path(@user.id), class: "btn-lg btn btn-outline-info" %>
+        <% end %>
       </div>
     <% end %>
+    <div class="user-profile">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <%= attachment_image_tag @user, :profile_image, size:"200x200", fallback: "no_image.jpg", class:"mt-3 rounded-circle d-block mx-auto" %>
+        </div>
 
-    <p class="introduction">自己紹介</p>
-    <div class="border border-dark introduction-border">
-      <%= @user.introduction %>
+        <div class="col-md-2 my-5">
+          <h5>投稿数</h5>
+          <h5>フォロー</h5>
+          <h5>フォロワー</h5>
+          <h5>総いいね数</h5>
+        </div>
+
+        <div class="col-md-2 my-5">
+          <h5><%= @user.posts.count %></h5>
+          <h5><%= link_to @user.followings.count, user_followings_path(@user) %></h5>
+          <h5><%= link_to @user.followers.count, user_followers_path(@user) %></h5>
+          <h5><%= @user.favorites.count %></h5>
+        </div>
+      </div>
+
+      <% if user_signed_in? %>
+        <div class="follow_btn text-right col-md-9">
+          <%= render "relationships/follow-btn", user: @user %>
+        </div>
+      <% end %>
+
+      <p class="introduction">自己紹介</p>
+      <div class="border border-dark introduction-border">
+        <%= @user.introduction %>
+      </div>
+
+      <% if user_signed_in? %>
+        <% if @user.id == current_user.id %>
+          <div class="text-center my-5">
+            <%= link_to "編集する", edit_user_path(current_user.id), class: "btn btn-lg btn-outline-success" %>
+          </div>
+        <% end %>
+
+        <% if current_user.admin? && @user.id != current_user.id && @user.is_deleted == false %>
+          <div class="text-right my-5">
+            <%= link_to "退会させる", user_admin_users_hide_path(@user), method: :put, "data-confirm" => "該当ユーザを本当に退会させますか？", class: "btn btn-warning" %>
+          </div>
+        <% end %>
+
+        <%if @user.is_deleted == true %>
+          <div class="text-right my-5">
+            <span class="btn btn-secondary">退会済み</span>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-
-    <% if user_signed_in? %>
-      <% if @user.id == current_user.id %>
-        <div class="text-center my-5">
-          <%= link_to "編集する", edit_user_path(current_user.id), class: "btn btn-lg btn-outline-success" %>
-        </div>
-      <% end %>
-
-      <% if current_user.admin? && @user.id != current_user.id && @user.is_deleted == false %>
-        <div class="text-right my-5">
-          <%= link_to "退会させる", user_admin_users_hide_path(@user), method: :put, "data-confirm" => "該当ユーザを本当に退会させますか？", class: "btn btn-warning" %>
-        </div>
-      <% end %>
-
-      <%if @user.is_deleted == true %>
-        <div class="text-right my-5">
-          <span class="btn btn-secondary">退会済み</span>
-        </div>
-      <% end %>
-    <% end %>
   </div>
 </div>
 

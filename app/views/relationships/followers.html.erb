@@ -1,7 +1,9 @@
-<%= render "search/search" %>
-<h2>Follower Users</h2>
-<% if @users.exists? %>
-  <%= render "users/index", users: @users %>
-<% else %>
-  <p>ユーザはいません</p>
-<% end %>
+<div class="folloers-page my-5">
+  <%= render "search/search" %>
+  <h2>Follower Users</h2>
+  <% if @users.exists? %>
+    <%= render "users/index", users: @users %>
+  <% else %>
+    <p>ユーザはいません</p>
+  <% end %>
+</div>
