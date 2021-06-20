@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get "homes/about" => "homes#about"
   get "search" => "search#search"
   get 'inquiry' => 'inquiry#index' # お問い合わせ
+  get 'inquiry/confirm' => 'inquiry#confirm'
   post 'inquiry/confirm' => 'inquiry#confirm' # 確認画面
+  get 'inquiry/complete' => 'inquiry#complete'
   post 'inquiry/complete' => 'inquiry#complete' # 送信完了画面
 
   devise_for :users, controllers: {

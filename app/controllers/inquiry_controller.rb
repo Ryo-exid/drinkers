@@ -5,18 +5,29 @@ class InquiryController < ApplicationController
   end
 
   def confirm #確認画面
-    @inquiry = Inquiry.new(inquiry_params)
-    if @inquiry.valid?
-      render :action => 'confirm'
-    else
-      render :action => 'index'
+    if request.post?
+      @inquiry = Inquiry.new(inquiry_params)
+      if @inquiry.valid?
+        render :action => 'confirm'
+      else
+        render :action => 'index'
+      end
+    else　# 確認画面からリロードせずに戻った場合
+      redirect_to inquiry_path
     end
   end
 
   def complete #完了画面
-    @inquiry = Inquiry.new(inquiry_params)
-    InquiryMailer.received_email(@inquiry).deliver
-    render :action => 'complete'
+    if request.post?
+      @inquiry = Inquiry.new(inquiry_params)
+      if InquiryMailer.received_email(@inquiry).deliver
+        render :action => 'complete'
+      else
+        render :action => 'index'
+      end
+    else
+      redirect_to inquiry_path
+    end
   end
 
   private
