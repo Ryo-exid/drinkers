@@ -22,4 +22,12 @@
 
     <%= f.submit '確認', class: 'btn btn-primary' %>
   <% end %>
+
+  <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <div class="text-right">
+        <%= link_to "お問い合わせ内容", admin_inquiry_chart_path, method: :get, class: "btn btn-warning" %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

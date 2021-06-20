@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   get 'inquiry/confirm' => 'inquiry#confirm'
   post 'inquiry/confirm' => 'inquiry#confirm' # 確認画面
   get 'inquiry/complete' => 'inquiry#complete'
-  post 'inquiry/complete' => 'inquiry#complete' # 送信完了画面
+  patch 'inquiry/complete' => 'inquiry#complete' # 送信完了画面
+  namespace :admin do
+    get 'inquiry/chart' => 'inquiry#chart' # お問い合わせ済み一覧
+    delete 'inquiry/:id' => 'inquiry#destroy', as: 'inquiry_destroy' #お問い合わせ削除
+  end
 
   devise_for :users, controllers: {
     sessions: "users/sessions",
