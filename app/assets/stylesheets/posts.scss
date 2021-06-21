@@ -2,6 +2,7 @@
   background-color: #F5FFFA;
 }
 
+// 1投稿の要素
 .post-box {
   position: relative;
 	padding-bottom: 4rem;
@@ -16,6 +17,7 @@
   font-size: 20px;
 }
 
+// 投稿タイトルのfont-awesome
 .fa-hand-point-right:before {
   content: "\f0a4";
   margin-right: 10px;
@@ -34,11 +36,11 @@
   width: 100%;
 }
 
+// 投稿画像
 img post-image {
   width: 100%;
   margin: 0 auto;
 }
-
 
 .post-caption {
   overflow-wrap: break-word;
@@ -48,6 +50,7 @@ img post-image {
   font-family: serif;
 }
 
+// レビュー（文字）
 .post-review {
   font-weight: 600;
   font-size: 22px;
@@ -55,6 +58,7 @@ img post-image {
   color: orange;
 }
 
+// 星
 .post-star img {
   width: 6%;
   height: 28px;
@@ -85,6 +89,7 @@ img post-image {
   margin-right: 20px;
 }
 
+// レビュー/コメント/いいね/場所をpost_boxの一番下に配置
 .post-bottom-contents {
   position: absolute;
 	bottom: 0;
