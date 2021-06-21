@@ -1,6 +1,92 @@
+.post-index-page {
+  background-color: #F5FFFA;
+}
+
 .post-box {
-  width: 30%;
-  border: 2px solid #7f4600;
+  position: relative;
+	padding-bottom: 4rem;
   border-radius: 10px;
-  margin: 50px 10px 0 10px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.post-user-name {
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.fa-hand-point-right:before {
+  content: "\f0a4";
+  margin-right: 10px;
+}
+
+.post-title {
+  color: #0000AA;
+  font-weight: 600;
+  font-size: 19px;
+}
+
+// 投稿画像の背景
+.post-background-img {
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  height: auto;
+  width: 100%;
+}
+
+img post-image {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.post-caption {
+  overflow-wrap: break-word;
+  margin: 0 0 0 20px;
+  font-weight: 600;
+  font-size: 30px;
+  font-family: serif;
+}
+
+.post-review {
+  font-weight: 600;
+  font-size: 22px;
+  font-family: serif;
+  color: orange;
+}
+
+.post-star img {
+  width: 6%;
+  height: 28px;
+  margin-bottom: 11px;
+
+}
+
+.like-btn {
+  color: #FF44FF;
+  font-size: 25px;
+}
+
+.like-btn-unlike {
+  color: #D0B0FF;
+  font-size: 25px;
+}
+
+.post-comment {
+  font-size: 25px;
+  color: #20B2AA;
+  margin: 0 20px;
+}
+
+.post-location {
+  font-weight: 600;
+  font-size: 23px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.post-bottom-contents {
+  position: absolute;
+	bottom: 0;
+	width: 100%;
 }

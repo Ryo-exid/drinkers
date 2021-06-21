@@ -19,10 +19,10 @@
                     <%= link_to user_path(post.user) do %>
                       <%= attachment_image_tag post.user, :profile_image, size: "60x60", fallback: "no_image.jpg", class:"rounded-circle mr-4" %>
                     <% end %>
-                    <p class="post-user-name mt-3"><%= post.user.name%></p>
-                    <%= link_to post.title, post_path(post), data: {"turbolinks"=>false}, class: "post-title fas fa-hand-point-right mt-1" %>
+                    <p class="ranking-user-name mt-3"><%= post.user.name%></p>
+                    <%= link_to post.title, post_path(post), data: {"turbolinks"=>false}, class: "ranking-post-title fas fa-hand-point-right mt-1" %>
                   </div>
-                  <div class="post-img">
+                  <div class="ranking-post-img">
                     <%= attachment_image_tag post, :post_image, format: "jpeg", size: "400", class: "img-responsive rounded d-block mx-auto" %>
                   </div>
                   <p class="ranking-caption"><%= post.caption %></p>
