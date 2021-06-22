@@ -159,3 +159,53 @@ img post-image {
 .form-star {
   margin-left: 15px;
 }
+
+// タイトル/キャプション/場所/投稿者(各コンテンツタイトル)
+.post-show-contents {
+  white-space: nowrap;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  text-shadow:
+    1px 1px 0px #000, -1px -1px 0px #000,
+    -1px 1px 0px #000,  1px -1px 0px #000,
+    1px 0px 0px #000, -1px  0px 0px #000,
+    0px 1px 0px #000,  0px -1px 0px #000;
+}
+
+// ユーザが入力した投稿内容
+.post-show-input {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  margin-top: 5px;
+  overflow-wrap: break-word;
+}
+
+
+// 投稿詳細ページの星
+.post-show-star img {
+  font-size: 20px;
+  padding-bottom: 6px;
+}
+
+// 投稿詳細ページのレビュー
+.post-show-review {
+  white-space: nowrap;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #FFFF00;
+  text-shadow:
+    1px 1px 0px #000, -1px -1px 0px #000,
+    -1px 1px 0px #000,  1px -1px 0px #000,
+    1px 0px 0px #000, -1px  0px 0px #000,
+    0px 1px 0px #000,  0px -1px 0px #000;
+}
+
+// コメントのカウント数
+.post-show-comment {
+  font-size: 24px;
+}

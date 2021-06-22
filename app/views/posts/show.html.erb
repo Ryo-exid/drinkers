@@ -1,45 +1,90 @@
-<div class="post-details-page my-5">
-<%= render "search/search" %>
-<div class="container">
-  <% if @post.user == current_user %>
-    <%= link_to "編集する", edit_post_path(@post), data: {"turbolinks"=>false} %> | <%= link_to "削除する", post_path(@post), method: :delete, "data-confirm" => "本当に削除しますか？"  %>
-  <% end %><br>
-  <%= attachment_image_tag @post, :post_image, format: "jpeg", size: "200x250" %>
-  <p>タイトル: <%= @post.title %></p>
-  <p>キャプション: <%= @post.caption %></p>
-  <div id="star-rate-<%= @post.id %>" class="star">
-    <span class="mr-3">レビュー：<%= @post.rate %></span>
-  </div>
-  <script>
-    $("#star-rate-<%= @post.id %>").raty({
-      size: 1,
-      starOff: "<%= asset_path('star-off.png') %>",
-      starOn: "<%= asset_path('star-on.png') %>",
-      starHalf: "<%= asset_path('star-half.png') %>",
-      half: true,
-      readOnly: true,
-      score: "<%= @post.rate %>",
-    });
-  </script>
-  <p>場所: <%= @post.location %></p>
-  <div id="favorite_btn_<%= @post.id %>" class="favorite-btn">
-    <%= render "favorites/favorite-btn", post: @post %>
-  </div>
-  <p>投稿者: <%= @post.user.name %></p>
-  <p id="comments-count">コメント数: <%= @post.post_comments.count %></p>
-  <div id="reply_<%= @post.id %>">
-    <%= render partial: "post_comments/comment", locals: {post: @post, post_comment: @post_comment} %>
-  </div>
-  <% if user_signed_in? %>
-    <%= form_with model: [@post, @post_comment], remote: true do |f| %>
-      <%= f.text_area :comment, size: "50x5" %><br>
-      <%= f.submit "送信" %>
-    <% end %>
-
-    <% if current_user.admin? %>
-      <div class="text-right">
-        <%= link_to "削除する", post_admin_post_path(@post), method: :delete, class: "btn btn-warning", "data-confirm" => "該当ユーザの投稿を本当に削除しますか？" %>
+<div class="post-details-page mt-3">
+  <%= render "search/search" %>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <%= attachment_image_tag @post, :post_image, format: "jpeg", size: "330x400", class: "img-responsive rounded d-block mx-auto" %>
       </div>
-    <% end %>
-  <% end %>
+      <div class="col-md-7">
+        <div class="form-inline">
+          <div class="col-md-4 post-show-contents">タイトル</div>
+          <div class="col-md-8 post-show-input"><%= @post.title %></div>
+        </div>
+        <hr>
+
+        <div class="form-inline">
+          <div class="col-md-4 post-show-contents">キャプション</div>
+          <div class="col-md-8 post-show-input"><%= @post.caption %></div>
+        </div>
+        <hr>
+
+        <div class="form-inline">
+          <div class="col-md-4 post-show-contents">場所</div>
+          <div class="col-md-8 post-show-input"><%= @post.location %></div>
+        </div>
+        <hr>
+
+        <div class="form-inline">
+          <div class="col-md-4 post-show-contents">投稿者</div>
+          <div class="col-md-8 post-show-input"><%= @post.user.name %></div>
+        </div>
+        <hr>
+
+        <div id="star">
+          <div id="star-rate-<%= @post.id %>" class="post-show-star">
+          <span class="col-md-4 post-show-review" style="margin-right:auto;">レビュー <%= @post.rate %></span>
+        </div>
+
+        <script>
+          $("#star-rate-<%= @post.id %>").raty({
+            size: 1,
+            starOff: "<%= asset_path('star-off.png') %>",
+            starOn: "<%= asset_path('star-on.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            half: true,
+            readOnly: true,
+            score: "<%= @post.rate %>",
+          });
+        </script>
+        <hr>
+
+        <div id="favorite_btn_<%= @post.id %>" class="favorite-btn col-md-4">
+          <%= render "favorites/favorite-btn", post: @post %>
+        </div>
+        <hr>
+
+        <% if @post.user == current_user %>
+          <div class="text-right">
+            <%= link_to "編集する", edit_post_path(@post), data: {"turbolinks"=>false}, class: "btn btn-outline-info" %>
+            <%= link_to "削除する", post_path(@post), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-outline-danger ml-5"%>
+          </dov>
+        <% end %><br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mb-4">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="comments-count" class="post-show-comment mb-1">コメント<%= @post.post_comments.count %>件</div>
+      <div id="reply_<%= @post.id %>">
+        <%= render partial: "post_comments/comment", locals: {post: @post, post_comment: @post_comment} %>
+      </div>
+      <% if user_signed_in? %>
+        <div class="text-center">
+          <%= form_with model: [@post, @post_comment], remote: true do |f| %>
+            <%= f.text_area :comment, class: "form-control p-4 mt-4 col-md-10 mx-auto" %><br>
+            <%= f.submit "送信", class: "btn-lg btn btn-outline-primary" %>
+          <% end %>
+        </div>
+
+        <% if current_user.admin? %>
+          <div class="text-right">
+            <%= link_to "削除する", post_admin_post_path(@post), method: :delete, class: "btn btn-warning", "data-confirm" => "該当ユーザの投稿を本当に削除しますか？" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
