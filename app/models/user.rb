@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable
 
   validates :name, {presence: {message: "を入力してください（20文字以内）"}, length: {maximum:20}}
   validates :birth_date, :address_city, :address_street, :address_building, presence: true
@@ -12,8 +12,9 @@ class User < ApplicationRecord
   validates :email, {presence: true, uniqueness: true, format: {with: VALID_EMAIL_REGEX}}
 
   VALID_PASSWORD_REGEX = /\A[\w\-]+\z/ # 先頭から末尾まで、全て「a-zA-Z0-9_」と「-」にマッチする文字列を許容
-  validates :password, {confirmation: true, length: {minimum: 6}, format: {with: VALID_PASSWORD_REGEX, message: "は半角英数字で入力してください（ハイフンも使用できます)"}}
-  validates :password_confirmation, presence: true
+  validates :password, length: {minimum: 6, format: {with: VALID_PASSWORD_REGEX, message: "は半角英数字で入力してください（ハイフンも使用できます)"}}, on: :create
+  validates :password, confirmation: true, on: :create
+  validates :password_confirmation, presence: true, on: :create
 
   attachment :profile_image
   has_many :posts, dependent: :destroy
