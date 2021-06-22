@@ -23,26 +23,24 @@
 
 // 「ランキング」
 .ranking-title {
+  display: inline-block;
+  font-size: 45px;
   font-style: italic;
-  font-family: cursive;
-  font-weight: bold;
-  font-size: 50px;
-  color: #FFFF00;
-  text-shadow:
-    1px 1px 0px #CC66FF, -1px -1px 0px #CC66FF,
-    -1px 1px 0px #CC66FF,  1px -1px 0px #CC66FF,
-    1px 0px 0px #CC66FF, -1px  0px 0px #CC66FF,
-    0px 1px 0px #CC66FF,  0px -1px 0px #CC66FF;
+  font-family: serif;
+  font-weight: 900;
+  text-shadow: 3px 3px 10px #FFCC33;
+  color: #6600FF;
+  white-space: nowrap;
 }
 
 .fa-crown {
   font-size: 40px;
   color: #FFFF00;
   text-shadow:
-    1px 1px 0px #CC66FF, -1px -1px 0px #CC66FF,
-    -1px 1px 0px #CC66FF,  1px -1px 0px #CC66FF,
-    1px 0px 0px #CC66FF, -1px  0px 0px #CC66FF,
-    0px 1px 0px #CC66FF,  0px -1px 0px #CC66FF;
+    1px 1px 0px #6600FF, -1px -1px 0px #6600FF,
+    -1px 1px 0px #6600FF,  1px -1px 0px #6600FF,
+    1px 0px 0px #6600FF, -1px  0px 0px #6600FF,
+    0px 1px 0px #6600FF,  0px -1px 0px #6600FF;
 }
 
 // 第何位
