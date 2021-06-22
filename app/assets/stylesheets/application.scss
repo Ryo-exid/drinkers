@@ -28,7 +28,7 @@ header {
 }
 
 #header-fixed {
-  position: fixed;
+  height: auto;
   width: 100%;
   background: #A1FFCE;
   background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE);
@@ -37,9 +37,11 @@ header {
 
 .nav-item {
   margin-top: 8px;
+  margin-right: 35px;
+  white-space: nowrap;
 }
 
-.nav-inquiry{
+.inquiry{
   margin-top: 5px;
 }
 
@@ -50,6 +52,7 @@ header {
   font-size: 30px;
   font-weight: 900;
   margin-left: 100px;
+  margin-right: 30px;
 }
 
 footer {
@@ -64,7 +67,6 @@ footer {
 
 // main（headerとfooterの高さを考慮）
 .wrapper {
-  padding-top: 70px;
   padding-bottom: 100px;
 }
 
