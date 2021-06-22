@@ -1,5 +1,23 @@
 .post-index-page {
   background-color: #F5FFFA;
+  padding-top: 20px;
+}
+
+// 「新着順」という文字
+.new-arrival-title {
+  display: inline-block;
+  margin: 40px 0 0 80px;
+  font-size: 45px;
+  font-style: italic;
+  font-family: serif;
+  font-weight: 900;
+  text-shadow: 3px 3px 10px #009900;
+  color: #FFFF00;
+}
+
+.create-button {
+  text-align: right;
+  margin: 0 50px 20px 0;
 }
 
 // 1投稿の要素
@@ -33,13 +51,15 @@
 .post-background-img {
   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
   height: auto;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
 }
 
 // 投稿画像
 img post-image {
-  width: 100%;
-  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 .post-caption {

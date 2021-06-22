@@ -1,23 +1,25 @@
-<div class="post-index-page my-5">
-  <%= render "search/search" %>
-  <div class="container-fluid">
-    <h2>新着順</h2>
-    <% if user_signed_in? %>
-      <div class="text-right">
-        <%= link_to 'Create', new_post_path, class: "btn btn-outline-success", data: {"turbolinks"=>false} %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="post-index-page">
+      <%= render "search/search" %>
+      <p class="new-arrival-title">新着順</p>
+      <% if user_signed_in? %>
+        <div class="create-button">
+          <%= link_to 'Create', new_post_path, class: "btn-lg btn btn-outline-success mr-5", data: {"turbolinks"=>false} %>
+        </div>
+      <% else %>
+        <div class="create-button">
+          <%= link_to 'Create', new_user_registration_path, class: "btn-lg btn btn-outline-success mr-5", data: {"turbolinks"=>false} %>
+        </div>
+      <% end %>
+      <div class="d-flex justify-content-around" style="margin: 0 50px;">
+        <div class="row">
+          <%= render "posts/index", posts: @posts %>
+        </div>
       </div>
-    <% else %>
-      <div class="text-right">
-        <%= link_to 'Create', new_user_registration_path, class: "btn btn-outline-success", data: {"turbolinks"=>false} %>
+      <div class="d-flex justify-content-center">
+        <%= paginate @posts %>
       </div>
-    <% end %>
-    <div class="d-flex justify-content-around" style="margin: 0 50px;">
-      <div class="row">
-        <%= render "posts/index", posts: @posts %>
-      </div>
-    </div>
-    <div class="d-flex justify-content-center">
-      <%= paginate @posts %>
     </div>
   </div>
 </div>
