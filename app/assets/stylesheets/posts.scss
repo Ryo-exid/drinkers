@@ -115,3 +115,47 @@ img post-image {
 	bottom: 0;
 	width: 100%;
 }
+
+// 投稿フォームページ　見出し
+.post-new-heading {
+  display: inline-block;
+  font-size: 45px;
+  font-style: italic;
+  font-family: serif;
+  font-weight: 900;
+  text-shadow: 3px 3px 10px #FFCC33	;
+  color: #00CCCC;
+  white-space: nowrap;
+}
+
+// 投稿編集ページ　見出し
+.post-edit-heading {
+  display: inline-block;
+  font-size: 45px;
+  font-style: italic;
+  font-family: serif;
+  font-weight: 900;
+  text-shadow: 3px 3px 10px #FFCC33	;
+  color: #6600FF;
+  white-space: nowrap;
+}
+
+// 新規投稿/投稿編集ページのラベル
+.post-form-label {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  margin-top: 5px;
+}
+
+// 新規投稿/投稿編集ページの星
+#star.form-group.row img {
+  width: 4%;
+  height: 28px;
+}
+
+// 星5個（一塊）
+.form-star {
+  margin-left: 15px;
+}

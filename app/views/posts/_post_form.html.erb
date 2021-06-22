@@ -1,27 +1,27 @@
 <%= form_with model: post, local:true do |f| %>
   <%= render "layouts/form_error_messages", model: f.object %>
   <div class="form-group row">
-    <%= f.label :post_image, '画像 ', class:'col-md-3 col-form-label' %>
-    <%= f.attachment_field :post_image %>
+    <%= f.label :post_image, '画像 ', class: "col-md-3 post-form-label" %>
+    <%= f.attachment_field :post_image, class: "ml-3" %>
   </div>
 
   <div class="form-group row">
-    <%= f.label :title, 'タイトル ', class:'col-md-3 col-form-label' %>
+    <%= f.label :title, 'タイトル ', class: "col-md-3 post-form-label" %>
     <div class="col-md-9">
       <%= f.text_field :title, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :caption, 'キャプション ', class:'col-md-3 col-form-label' %>
+    <%= f.label :caption, 'キャプション ', class: "col-md-3 post-form-label" %>
     <div class="col-md-9">
-      <%= f.text_area :caption, class: "form-control", rows: "8" %>
+      <%= f.text_area :caption, class: "form-control mb-1", rows: "8" %>
     </div>
   </div>
 
   <div class="form-group row" id="star">
-    <%= f.label :rate,'レビュー ', class:'col-md-3 col-form-label' %>
-    <%= f.hidden_field :rate, id: :review_star %>
+    <%= f.label :rate,'レビュー ', class: "col-md-3 post-form-label" %>
+    <span class="form-star"><%= f.hidden_field :rate, id: :review_star %></span>
   </div>
 
   <script>
@@ -36,15 +36,15 @@
   </script>
 
   <div class="form-group row">
-    <%= f.label :location,'場所 ', class:'col-md-3 col-form-label' %>
+    <%= f.label :location,'場所 ', class: "col-md-3 post-form-label" %>
     <div class="col-md-9">
       <%= f.text_area :location, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group row justify-content-end">
-    <div class="col-md-9">
-      <%= f.submit '投稿', class:"btn btn-outline-success" %>
+    <div class="mt-4 mr-3">
+      <%= f.submit '投稿', class: "btn-lg btn btn-outline-success" %>
     </div>
   </div>
 <% end %>
