@@ -10,28 +10,35 @@
       </div>
     <% end %>
     <div class="user-profile">
-      <div class="row d-flex justify-content-center">
+      <div class="row">
         <div class="col-md-6">
           <%= attachment_image_tag @user, :profile_image, size:"200x200", fallback: "no_image.jpg", class:"mt-3 rounded-circle d-block mx-auto" %>
         </div>
+        <div class="col-6">
+          <div class="form-inline user-contents-group">
+            <div class="col-md-3 user-show-contents">投稿数</div>
+            <div class="col-md-4 content-count"><%= @user.posts.count %></div>
+          </div>
 
-        <div class="col-md-2 my-5">
-          <h5>投稿数</h5>
-          <h5>フォロー</h5>
-          <h5>フォロワー</h5>
-          <h5>総いいね数</h5>
-        </div>
+          <div class="form-inline user-contents-group">
+            <div class="col-md-3 user-show-contents">フォロー</div>
+            <div class="col-md-4 content-count"><%= link_to @user.followings.count, user_followings_path(@user) %></div>
+          </div>
 
-        <div class="col-md-2 my-5">
-          <h5><%= @user.posts.count %></h5>
-          <h5><%= link_to @user.followings.count, user_followings_path(@user) %></h5>
-          <h5><%= link_to @user.followers.count, user_followers_path(@user) %></h5>
-          <h5><%= @user.favorites.count %></h5>
+          <div class="form-inline user-contents-group">
+            <div class="col-md-3 user-show-contents">フォロワー</div>
+            <div class="col-md-4 content-count"><%= link_to @user.followers.count, user_followers_path(@user) %></div>
+          </div>
+
+          <div class="form-inline user-contents-group">
+            <div class="col-md-3 user-show-contents">総いいね数</div>
+            <div class="col-md-4 content-count"><%= @user.favorites.count %></div>
+          </div>
         </div>
       </div>
 
       <% if user_signed_in? %>
-        <div class="follow_btn text-right col-md-9">
+        <div class="follow_btn text-right col-md-9 mt-5">
           <%= render "relationships/follow-btn", user: @user %>
         </div>
       <% end %>
