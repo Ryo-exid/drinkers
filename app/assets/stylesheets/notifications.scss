@@ -12,13 +12,14 @@
   margin-right: -30px;
 }
 
-// .nav-item .notification-badge::before {
-//   content: "●";
-//   font-family: 'Courier New', Courier, monospace;
-//   color: #008489;
-//   position: relative;
-//   top: -10px;
-//   right: -0px;
-//   font-size: 4px;
-//   text-shadow: 0px 0px 2px #008489;
-// }
+// 通知ページ　見出し
+.notifications-heading {
+  margin: 30px 0;
+  font-size: 45px;
+  font-style: italic;
+  font-family: serif;
+  font-weight: 900;
+  text-shadow: 3px 3px 10px #FFCC33	;
+  color: #6600FF;
+  white-space: nowrap;
+}
