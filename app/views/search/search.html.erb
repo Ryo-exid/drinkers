@@ -1,13 +1,24 @@
-<div class="search-page my-5">
+<div class="search-page my-3">
   <%= render "search/search" %>
   <% if @range == "タイトル" || @range == "場所" %>
-    <h2> 投稿検索結果 </h2>
-    <div class="container">
+    <div class="search-heading col-md-4">投稿検索結果</div>
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <%= link_to 'Create', new_post_path, class: "btn btn-outline-success", data: {"turbolinks"=>false} %>
+        <div class="col-md-11 mx-auto">
+          <% if user_signed_in? %>
+            <div class="create-button">
+              <%= link_to 'Create', new_post_path, class: "btn-lg btn btn-outline-success mr-5", data: {"turbolinks"=>false} %>
+            </div>
+          <% else %>
+            <div class="create-button">
+              <%= link_to 'Create', new_user_registration_path, class: "btn-lg btn btn-outline-success mr-5", data: {"turbolinks"=>false} %>
+            </div>
+          <% end %>
           <div class="d-flex flex-wrap justify-content-center">
             <%= render "posts/index", posts: @posts %>
+          </div>
+          <div class="d-flex justify-content-center my-3">
+            <%= paginate @posts %>
           </div>
         </div>
       </div>
