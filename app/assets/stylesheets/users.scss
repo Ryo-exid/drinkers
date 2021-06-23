@@ -43,7 +43,29 @@
   white-space: nowrap;
 }
 
+// 投稿数/フォロー/フォロワー/総いいね数(各コンテンツ)の数字
 .content-count {
   white-space: nowrap;
   text-align: right;
+}
+
+// ユーザ編集ページ　見出し
+.user-edit-heading {
+  display: inline-block;
+  font-size: 45px;
+  font-style: italic;
+  font-family: serif;
+  font-weight: 900;
+  text-shadow: 3px 3px 10px #FFCC33	;
+  color: #6600FF;
+  white-space: nowrap;
+}
+
+// ユーザ編集ページのラベル
+.user-form-label {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  margin-top: 10px;
 }

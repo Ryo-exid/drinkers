@@ -1,23 +1,36 @@
-<div class="container my-5">
-
-  <h2 class="mt-5">ユーザ情報編集</h2>
+<div class="container">
+  <div class="my-5 user-edit-heading">ユーザ情報編集</div>
   <%= form_with model: @user, local:true do |f| %>
-    <%= render "layouts/form_error_messages", model: f.object %>
-    <div class="form-group">
-      <%= f.attachment_field :profile_image %>
+  <%= render "layouts/form_error_messages", model: f.object %>
+    <div class="col-md-8 offset-2 mx-auto">
+      <div class="form-group row">
+        <%= f.label :profile_image, '画像 ', class: "col-md-3 user-form-label" %>
+        <%= f.attachment_field :profile_image, class: "ml-3 mt-2" %>
       </div>
-    <div class="form-group">
-      <%= f.label "ユーザ名" %>
-      <%= f.text_field :name %>
+      <div class="form-group row">
+        <%= f.label :name, "ユーザ名 ", class: "col-md-3 user-form-label" %>
+        <div class="col-md-9">
+          <%= f.text_field :name, class: "form-control mt-2" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :introduction, "自己紹介 ", class: "col-md-3 user-form-label" %>
+        <div class="col-md-9">
+          <%= f.text_area :introduction, class: "form-control mb-1 mt-2", rows: "5" %>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <%= f.label "自己紹介" %>
-      <%= f.text_area :introduction %>
+    <div class="form-group row justify-content-center">
+      <div class="mt-4 mr-3">
+        <%= f.submit "変更する", class: "btn-lg btn btn-outline-success" %>
+      </div>
     </div>
-    <%= f.submit :変更を保存, class: "btn btn-outline-success" %><br>
 
     <% if user_signed_in? && @user.id == current_user.id %>
-      <%= link_to "退会する", users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？二度とログインできなくなります。", class: "btn btn-outline-danger my-5" %>
+      <hr class="mt-5">
+      <div class="form-group row justify-content-end col-md-11">
+        <%= link_to "退会する", users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？二度とログインできなくなります。", class: "btn btn-warning my-5" %>
+      </div>
     <% end %>
   <% end %>
 </div>
