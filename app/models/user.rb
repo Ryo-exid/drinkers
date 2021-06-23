@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable
 
   validates :name, {presence: {message: "を入力してください（20文字以内）"}, length: {maximum:20}}
-  validates :birth_date, :address_city, :address_street, :address_building, presence: true
-  validates :postcode, {length: {is: 7}, numericality: {only_integer: true}}
+  validates :birth_date, :address_city, :address_street, :address_building, presence: true, on: :create
+  validates :postcode, length: {is: 7}, on: :create
+  validates :postcode, numericality: {only_integer: true}, on: :create
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i # 正規表現
   validates :email, {presence: true, uniqueness: true, format: {with: VALID_EMAIL_REGEX}}
