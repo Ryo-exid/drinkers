@@ -81,6 +81,7 @@
 
         <% if current_user.admin? %>
           <div class="text-right">
+            <hr class="my-5">
             <%= link_to "削除する", post_admin_post_path(@post), method: :delete, class: "btn btn-warning", "data-confirm" => "該当ユーザの投稿を本当に削除しますか？" %>
           </div>
         <% end %>

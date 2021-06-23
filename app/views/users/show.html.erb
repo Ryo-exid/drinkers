@@ -55,15 +55,16 @@
           </div>
         <% end %>
 
-        <% if current_user.admin? && @user.id != current_user.id && @user.is_deleted == false %>
-          <div class="text-right my-5">
-            <%= link_to "退会させる", user_admin_users_hide_path(@user), method: :put, "data-confirm" => "該当ユーザを本当に退会させますか？", class: "btn btn-warning" %>
-          </div>
-        <% end %>
-
         <%if @user.is_deleted == true %>
           <div class="text-right my-5">
             <span class="btn btn-secondary">退会済み</span>
+          </div>
+        <% end %>
+
+        <% if current_user.admin? && @user.id != current_user.id && @user.is_deleted == false %>
+          <hr class="my-5">
+          <div class="text-right my-5">
+            <%= link_to "退会させる", user_admin_users_hide_path(@user), method: :put, "data-confirm" => "該当ユーザを本当に退会させますか？", class: "btn btn-warning" %>
           </div>
         <% end %>
       <% end %>
