@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <h2 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h2>
+    <div class="col-md-8 mx-auto mt-5">
+      <h2 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>" class="chat-heading"><%= @user.name %>さん とのダイレクトメッセージ</h2>
       <table class="message table">
         <thead>
           <tr>
@@ -14,7 +14,7 @@
           <tbody>
             <tr>
               <th>
-                <p style="text-align: left;"><%= chat.message %></p>
+                <p class="chat-partner-message"><%= chat.message %></p>
               </th>
               <th></th>
             </tr>
@@ -24,7 +24,7 @@
             <tr>
               <th></th>
               <th>
-                <p style="text-align: right;"><%= chat.message %></p>
+                <p class="chat-message"><%= chat.message %></p>
               </th>
             </tr>
           </tbody>
@@ -33,10 +33,10 @@
       </table>
 
       <%= form_with model: @chat do |f| %>
-        <div class="d-flex justify-content-end">
-        <%= f.text_field :message %>
+        <div class="d-flex justify-content-end mb-5">
+        <%= f.text_field :message, class: "form-control col-md-5" %>
         <%= f.hidden_field :room_id %>
-        <%= f.submit "送信", class: "btn btn-outline-success"%>
+        <%= f.submit "送信", class: "btn btn-outline-success ml-4"%>
       <% end %>
     </div>
   </div>
