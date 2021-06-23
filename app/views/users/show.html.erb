@@ -1,4 +1,4 @@
-<div class="user-details-page my-5">
+<div class="user-details-page my-3">
   <%= render "search/search" %>
   <div class="container">
     <p class="user-profile-name"><%= @user.name %></p>
@@ -43,9 +43,9 @@
         </div>
       <% end %>
 
-      <p class="introduction">自己紹介</p>
-      <div class="border border-dark introduction-border">
-        <%= @user.introduction %>
+      <p class="introduction col-3 text-right">自己紹介</p>
+      <div class="introduction-border col-md-8">
+        <h4><%= @user.introduction %></h4>
       </div>
 
       <% if user_signed_in? %>
