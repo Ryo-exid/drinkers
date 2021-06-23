@@ -3,16 +3,42 @@ table {
 }
 
 th {
-  width:200px;
+  width: 200px;
   height: auto;
 }
 
-// チャットページ見出し
+// チャットページ見出し（〇〇さん とのダイレクトメッセージ）
 .chat-heading {
-  margin-bottom: 30px;
+  margin: 30px auto 50px auto;
   white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 40px;
+  font-style: italic;
+  color: white;
+  text-shadow:
+    1px 1px 0px #000, -1px -1px 0px #000,
+    -1px 1px 0px #000,  1px -1px 0px #000,
+    1px 0px 0px #000, -1px  0px 0px #000,
+    0px 1px 0px #000,  0px -1px 0px #000;
 }
 
+// 見出しのアンダーライン（金色）
+.chat-heading:before{
+  position: absolute;
+  margin: 0 auto;
+  top: 80px;
+  width: 400px;
+  height: 4px;
+  content: '';
+  background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+  background-image: linear-gradient(135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+}
+
+
+// 相手のダイレクトメッセージ
 .chat-partner-message {
   text-align: left;
   margin: 6px 0;
@@ -20,6 +46,7 @@ th {
   overflow-wrap: break-word;
 }
 
+// 自分のダイレクトメッセージ
 p.chat-message {
   text-align: right;
   margin: 6px 0;

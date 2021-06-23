@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 mx-auto mt-5">
-      <h2 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>" class="chat-heading"><%= @user.name %>さん とのダイレクトメッセージ</h2>
+      <h2 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>" class="chat-heading">ダイレクトメッセージ</h2>
       <table class="message table">
         <thead>
           <tr>
-            <th class="text-left"><%= @user.name %></th>
-            <th class="text-right"><%= current_user.name %></th>
+            <th class="text-left" style="font-size: 25px;"><%= @user.name %></th>
+            <th class="text-right" style="font-size: 25px; color: #00BB00;"><%= current_user.name %></th>
           </tr>
         </thead>
         <% @chats.each do |chat| %>
