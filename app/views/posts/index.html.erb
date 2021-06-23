@@ -2,7 +2,7 @@
   <div class="row">
     <div class="post-index-page">
       <%= render "search/search" %>
-      <p class="new-arrival-title col-md-4">新着順</p>
+      <p class="new-arrival-title col-md-4 mb-0">新着順</p>
       <% if user_signed_in? %>
         <div class="create-button">
           <%= link_to 'Create', new_post_path, class: "btn-lg btn btn-outline-success mr-5", data: {"turbolinks"=>false} %>
