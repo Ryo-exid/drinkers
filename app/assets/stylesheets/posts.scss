@@ -6,8 +6,9 @@
 // 「新着順」という文字
 .new-arrival-title {
   display: inline-block;
-  margin: 40px 0 0 80px;
-  font-size: 45px;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 55px;
   font-style: italic;
   font-family: serif;
   font-weight: 900;
@@ -23,7 +24,7 @@
 // 1投稿の要素
 .post-box {
   position: relative;
-	padding-bottom: 4rem;
+	padding-bottom: 6rem;
   border-radius: 10px;
   background-color: white;
   margin: 0 auto;
@@ -66,7 +67,7 @@ img post-image {
   overflow-wrap: break-word;
   margin: 0 0 0 20px;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 26px;
   font-family: serif;
 }
 

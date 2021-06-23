@@ -13,8 +13,8 @@
         <%= attachment_image_tag post, :post_image, format: "jpeg", size: "350x400", class: "rounded d-block mx-auto" %>
       </div>
       <p class="post-caption"><%= post.caption %></p>
-      <hr class="mt-0 mb-4">
       <div class="post-bottom-contents">
+        <hr class="mt-4">
         <div id="star-rate-<%= post.id %>" class="post-star">
           <span class="post-review col-md-12"><%= post.rate %></span>
         </div>
