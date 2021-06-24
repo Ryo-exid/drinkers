@@ -9,21 +9,23 @@
   border: solid 2px #FF3399;
 }
 
+// 「自己紹介」という文字
 .introduction{
   font-size: 20px;
   white-space: nowrap;
 }
 
+// 自己紹介欄
 .introduction-border {
   width: 100%;
-  height: 100px;
+  height: auto;
   margin: 0 auto;
-  padding: 0.5em;
-  background-color: #FAEBD7;
+  padding: 1.5em;
+  background-color: #FFFFEE;
   color: #606060;
   box-shadow: 0 0 5px 1px #b2b2b2;
-  border-left:15px solid #A0522D;
-  border-right :15px solid #A0522D;
+  border-left: 10px solid #FFD700;
+  border-right: 10px solid #FFD700;
   border-radius: 0 50px 0 50px;
   overflow-wrap: break-word;
 }
@@ -68,4 +70,13 @@
   font-size: 20px;
   color: black;
   margin-top: 10px;
+}
+
+// ユーザ一覧の自己紹介
+.user-index-introduction p {
+  width: 100%;
+  margin: 0 auto;
+  font-family: serif;
+  font-weight: 500;
+  overflow-wrap: break-word;
 }

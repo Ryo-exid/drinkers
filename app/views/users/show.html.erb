@@ -45,7 +45,7 @@
 
       <p class="introduction col-3 text-right">自己紹介</p>
       <div class="introduction-border col-md-8">
-        <h4><%= @user.introduction %></h4>
+        <h4><%= simple_format(@user.introduction) %></h4>
       </div>
 
       <% if user_signed_in? %>
