@@ -76,6 +76,7 @@
   margin-right: 10px;
 }
 
+// ランキング画面（トップページ）の投稿タイトル
 .ranking-post-title {
   color: #0000AA;
   font-weight: 600;
@@ -84,11 +85,10 @@
   margin-right: 30px;
 }
 
-// 投稿画像の背景
+// ランキング画面の投稿画像の背景
 .ranking-post-img {
   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
 }
-
 
 .ranking-caption {
   margin: 0 0 0 20px;
@@ -128,4 +128,37 @@
   font-size: 25px;
   margin-left: auto;
   margin-right: 35px;
+}
+
+// アバウトページの見出し
+.about-application-heading {
+  width: 100%;
+  margin: 100px auto;
+  font-style: italic;
+  font-family: cursive;
+  font-size: 70px;
+  font-weight: 900;
+}
+
+// アバウトページの見出しの「Drinker×Drinker」
+.about-application-title {
+  color: #FFFF00;
+  text-shadow:
+    1px 1px 0px #0000CD, -1px -1px 0px #0000CD,
+    -1px 1px 0px #0000CD,  1px -1px 0px #0000CD,
+    1px 0px 0px #0000CD, -1px  0px 0px #0000CD,
+    0px 1px 0px #0000CD,  0px -1px 0px #0000CD;
+}
+
+.about-text {
+  width: 100%;
+  line-height:  50px;
+  white-space: nowrap;
+}
+
+// アバウトページの新規登録/ログインリンク
+.new-user-link {
+  margin-top: 100px;
+  font-size: 20px;
+  white-space: nowrap;
 }
