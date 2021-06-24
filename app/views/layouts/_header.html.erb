@@ -1,7 +1,7 @@
 <header class="shadow-sm" id="header-fixed">
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <%= link_to "Drinker × Drinker", root_path, class: "navbar-brand p-3 application-title", data: {"turbolinks"=>false} %>
+      <%= link_to "Drinker × Drinker", root_path, class: "navbar-brand p-3 application-title text-white", data: {"turbolinks"=>false} %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,35 +12,35 @@
               <% if unchecked_notifications.any? %>
                 <i class="fa fa-circle"></i>
               <% end %>
-              <%= link_to "通知", notifications_path, class: "fas fa-bell nav-link text-dark", data: {"turbolinks"=>false} %>
+              <%= link_to "通知", notifications_path, class: "fas fa-bell nav-link text-white", data: {"turbolinks"=>false} %>
             </li>
             <li class="nav-item">
-              <%= link_to "投稿一覧", posts_path, class: "fas fa-beer nav-link text-dark", data: {"turbolinks"=>false} %>
+              <%= link_to "投稿一覧", posts_path, class: "fas fa-beer nav-link text-white", data: {"turbolinks"=>false} %>
             </li>
             <li class="nav-item">
-              <%= link_to "マイページ", user_path(current_user.id), class: "fas fa-user-cog nav-link text-dark", data: {"turbolinks"=>false} %>
+              <%= link_to "マイページ", user_path(current_user.id), class: "fas fa-user-cog nav-link text-white", data: {"turbolinks"=>false} %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link text-dark", data: {"turbolinks"=>false} %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link text-white", data: {"turbolinks"=>false} %>
             </li>
             <li class="nav-item inquiry">
-              <%= link_to "お問い合わせ", inquiry_path, method: :get, class:"nav-link text-dark", data: {"turbolinks"=>false} %>
+              <%= link_to "お問い合わせ", inquiry_path, method: :get, class:"nav-link text-white", data: {"turbolinks"=>false} %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "About", homes_about_path, class: "fas fa-cocktail nav-link text-dark", data: {"turbolinks"=>false} %>
+              <%= link_to "About", homes_about_path, class: "fas fa-cocktail nav-link text-white", data: {"turbolinks"=>false} %>
             </li>
             <li class="nav-item">
-              <%= link_to "投稿一覧", posts_path, class: "fas fa-glass-cheers nav-link text-dark", data: {"turbolinks"=>false} %>
+              <%= link_to "投稿一覧", posts_path, class: "fas fa-glass-cheers nav-link text-white", data: {"turbolinks"=>false} %>
             </li>
             <li class="nav-item">
-              <%= link_to "新規登録", new_user_registration_path, class: "fas fa-user-plus nav-link text-dark", data: {"turbolinks"=>false} %>
+              <%= link_to "新規登録", new_user_registration_path, class: "fas fa-user-plus nav-link text-white", data: {"turbolinks"=>false} %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログイン", new_user_session_path, class: "fas fa-sign-in-alt nav-link text-dark", data: {"turbolinks"=>false} %>
+              <%= link_to "ログイン", new_user_session_path, class: "fas fa-sign-in-alt nav-link text-white", data: {"turbolinks"=>false} %>
             </li>
             <li class="nav-item inquiry">
-              <%= link_to "お問い合わせ", inquiry_path, method: :get, class:"nav-link text-dark", data: {"turbolinks"=>false} %>
+              <%= link_to "お問い合わせ", inquiry_path, method: :get, class:"nav-link text-white", data: {"turbolinks"=>false} %>
             </li>
           <% end %>
         </ul>
