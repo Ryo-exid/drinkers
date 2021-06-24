@@ -1,13 +1,18 @@
-<div class="container mt-5">
+<div class="container">
+  <h1 class="my-5">お問い合わせ一覧</h1>
   <div class="chart-page">
-    <% @inquiries.each do |inquiry| %>
-      <h4>ユーザ名: <%= inquiry.name %></h4>
-      <h4>メールアドレス: <%= inquiry.email %></h4>
-      <h4>お問い合わせ内容: <%= inquiry.message %></h4>
-      <div class="text-right mt-3">
-        <%= link_to "削除する", admin_inquiry_destroy_path(inquiry), method: :delete, "data-confirm" => "お問い合わせ内容を本当に削除しますか？", class: "btn btn-warning" %>
+    <div class="row">
+      <div class="col-md-11 mx-auto">
+        <% @inquiries.each do |inquiry| %>
+          <h4>ユーザ名: <%= inquiry.name %></h4>
+          <h4 class="my-3">メールアドレス: <%= inquiry.email %></h4>
+          <h4>【お問い合わせ内容】 <%= simple_format(inquiry.message) %></h4>
+          <div class="text-right mt-3">
+            <%= link_to "削除する", admin_inquiry_destroy_path(inquiry), method: :delete, "data-confirm" => "お問い合わせ内容を本当に削除しますか？", class: "btn btn-warning" %>
+          </div>
+          <hr>
+        <% end %>
       </div>
-      <hr>
-    <% end %>
+    </div>
   </div>
 </div>

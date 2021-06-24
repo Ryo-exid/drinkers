@@ -21,11 +21,15 @@ td {
   overflow-wrap: break-word;
 }
 
-.chart-page {
-  padding-top: 70px;
-}
-
 // トップページへ戻る（お問い合わせ完了画面）
 .top-page-link {
   margin-top: 100px;
+}
+
+// 管理者権限お問い合わせ一覧ページのお問い合わせ内容
+.chart-page p {
+  margin-top: 0.5rem;
+  margin-left: 20px;
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
 }
