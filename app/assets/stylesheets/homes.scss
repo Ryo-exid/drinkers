@@ -67,7 +67,7 @@
 
 .ranking-user-name {
   color: black;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 25px;
 }
 
@@ -90,11 +90,13 @@
   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
 }
 
-.ranking-caption {
-  margin: 0 0 0 20px;
-  font-weight: 600;
-  font-size: 30px;
+.ranking-caption p {
   font-family: serif;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-left: 20px;
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
 }
 
 .ranking-review {
