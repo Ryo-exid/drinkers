@@ -9,7 +9,7 @@
     <span>
       <%= " (#{time_ago_in_words(notification.created_at)}前)" %>
       <% if !@post_comment.nil? %>
-        <h5 class="moderate-font text-center" style="color: #C0C0C0;"><%= @post_comment %></h5>
+        <h5 class="moderate-font text-center" style="color: #C0C0C0;"><%= simple_format(@post_comment) %></h5>
       <% end %>
     </span>
 </div>
