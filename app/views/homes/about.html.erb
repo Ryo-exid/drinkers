@@ -1,14 +1,17 @@
-<div class="container-fulid">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h1 class="about-application-heading">Welcome to <span class="about-application-title">Drinker × Drinker<span></h1>
-      <h5 class="about-text">
-        当サイトは、お酒好きのあなたの為のサイトです。<br>
-        こんなお酒が美味しい、広めたいといった正直な感想などを気軽に投稿し、<br>
-        お酒好き同士の輪を広めていきましょう！
-      </h5>
-      <div class="new-user-link">
-        <%= link_to "会員登録", new_user_registration_path %> | <%= link_to "ログイン", new_user_session_path %>
+<div class="about-page">
+  <div class="container-fulid">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1 class="about-application-heading">Welcome to <span class="about-application-title">Drinker × Drinker<span></h1>
+        <h5 class="about-text">
+          当サイトは、お酒好きのあなたの為のサイトです。<br>
+          こんなお酒が美味しい、広めたいといった正直な感想などを気軽に投稿し、<br>
+          お酒好き同士の輪を広げていきましょう！
+        </h5>
+        <div class="new-user-link">
+          <%= link_to "会員登録", new_user_registration_path, class: "btn-lg btn btn-info mr-5 ml-5" %>
+          <%= link_to "ログイン", new_user_session_path, class: "btn-lg btn btn-light mr-5 ml-5" %>
+        </div>
       </div>
     </div>
   </div>
