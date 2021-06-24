@@ -1,15 +1,16 @@
 <div class="container my-5">
-  <div class="page-header">
-    <h2>お問い合わせ完了</h2>
-  </div>
-  <h3 class="my-5"><%= @inquiry.name %>様<h3>
-  <h5 class="my-2">
-    この度はお問い合わせ頂き、誠にありがとうございます。<br>
-    お問い合わせいただいた内容は、順次確認させて頂いております。</br>
-    ご対応に日数を要する場合がございますが、何卒ご容赦くださいますようお願い申し上げます。
-  </h5>
-  <h5 class="my-5">今後とも Drinker × Drinker を宜しくお願い致します。</h5>
-  <div class="my-5 text-center">
-    <h4><%= link_to "トップページへ", root_path %></h4>
+  <h1>お問い合わせが完了しました。</h1>
+  <div class="row">
+    <div class="col-md-11 mx-auto">
+    <h3 class="my-5"><%= @inquiry.name %>様<h3>
+    <h5 class="my-2">
+      この度はお問い合わせ頂き、誠にありがとうございます。<br>
+      お問い合わせいただいた内容は、順次確認させて頂いております。</br>
+      ご対応に日数を要する場合がございますが、何卒ご容赦くださいますようお願い申し上げます。
+    </h5>
+    <h5 class="my-5">今後とも Drinker × Drinker を宜しくお願い致します。</h5>
+    <div class="text-center">
+      <h4 class="top-page-link"><%= link_to "トップページへ", root_path %></h4>
+    </div>
   </div>
 </div>
