@@ -1,10 +1,31 @@
+.table th {
+  padding: 0.75rem;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
 
+.table td {
+  padding: 0.5rem;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
 
 th {
-  width: 230px;
+  width: 270px;
   height: auto;
+  font-size: 20px;
+}
+
+td {
+  font-size: 20px;
+  overflow-wrap: break-word;
 }
 
 .chart-page {
   padding-top: 70px;
+}
+
+// トップページへ戻る（お問い合わせ完了画面）
+.top-page-link {
+  margin-top: 100px;
 }
