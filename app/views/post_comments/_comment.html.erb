@@ -7,7 +7,7 @@
       <% end %>
     </div>
     <div class="col-md-7 d-flex align-items-center">
-      <h5><%= post_comment.comment %></h5>
+      <h5 class="post-show-comment"><%= simple_format(post_comment.comment) %></h5>
     </div>
     <div class="col-md-1 d-flex align-items-end">
       <% if current_user == post_comment.user %>

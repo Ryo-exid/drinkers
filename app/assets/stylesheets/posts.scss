@@ -182,7 +182,16 @@ img post-image {
   font-weight: bold;
   font-size: 20px;
   color: black;
-  margin-top: 5px;
+  overflow-wrap: break-word;
+}
+
+.post-show-input p {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
   overflow-wrap: break-word;
 }
 
@@ -208,6 +217,15 @@ img post-image {
 }
 
 // コメントのカウント数
-.post-show-comment {
+.post-comment-count {
   font-size: 24px;
+}
+
+.post-show-comment p {
+  font-family: serif;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-left: 20px;
+  margin-bottom: 0.5rem;
+  overflow-wrap: break-word;
 }
