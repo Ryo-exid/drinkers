@@ -30,7 +30,7 @@
           });
         </script>
         <div class="form-inline mt-2">
-          <i class="fas fa-comment post-comment"><%= post.post_comments.count %></i>
+          <%= link_to post.post_comments.count, post_path(post), class: "fas fa-comment post-comment" %>
           <div id="favorite_btn_<%= post.id %>" class="post-like-btn">
             <%= render "favorites/favorite-btn", post: post %>
           </div>
