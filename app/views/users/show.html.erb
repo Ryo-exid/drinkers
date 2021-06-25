@@ -8,6 +8,10 @@
           <%= link_to "DM", chat_path(@user.id), class: "btn-lg btn btn-outline-info" %>
         <% end %>
       </div>
+    <% else %>
+      <div class="text-right">
+        <%= link_to "DM", new_user_session_path, class: "btn-lg btn btn-outline-info" %>
+      </div>
     <% end %>
     <div class="user-profile">
       <div class="row">
