@@ -6,10 +6,10 @@ class Post < ApplicationRecord
   has_many :notifications, dependent: :destroy
 
   validates :post_image, presence: { message: 'を選択してください' }
-  validates :title, {presence: true, length: {maximum: 50}}
-  validates :caption, {presence: true, length: {maximum: 140}}
+  validates :title, { presence: true, length: { maximum: 50 } }
+  validates :caption, { presence: true, length: { maximum: 140 } }
   validates :rate, presence: { message: 'を設定してください' }
-  validates :location, {presence: true, length: {maximum: 20}}
+  validates :location, { presence: true, length: { maximum: 20 } }
 
   # いいね機能
   def favorited_by?(user)

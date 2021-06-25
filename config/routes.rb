@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root "homes#top"
   get "homes/about" => "homes#about"
   get "search" => "search#search"
@@ -10,12 +9,12 @@ Rails.application.routes.draw do
   patch 'inquiry/complete' => 'inquiry#complete' # 送信完了画面
   namespace :admin do
     get 'inquiry/chart' => 'inquiry#chart' # お問い合わせ済み一覧
-    delete 'inquiry/:id' => 'inquiry#destroy', as: 'inquiry_destroy' #お問い合わせ削除
+    delete 'inquiry/:id' => 'inquiry#destroy', as: 'inquiry_destroy' # お問い合わせ削除
   end
 
   devise_for :users, controllers: {
     sessions: "users/sessions",
-    registrations: "users/registrations"
+    registrations: "users/registrations",
   }
 
   resources :users do

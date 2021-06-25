@@ -1,5 +1,4 @@
 class SearchController < ApplicationController
-
   def search
     @range = params[:range]
     if @range == "タイトル" || @range == "場所"

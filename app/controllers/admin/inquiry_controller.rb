@@ -14,8 +14,9 @@ class Admin::InquiryController < ApplicationController
   end
 
   private
+
   def if_not_admin
-    redirect_to root_path unless current_user.admin? #管理ユーザー以外で特定のアクションを実行しようとした場合には、トップページにリダイレクト
+    redirect_to root_path unless current_user.admin? # 管理ユーザー以外で特定のアクションを実行しようとした場合には、トップページにリダイレクト
   end
 
   def inquiry_params

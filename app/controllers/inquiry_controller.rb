@@ -4,7 +4,7 @@ class InquiryController < ApplicationController
     render :action => 'index'
   end
 
-  def confirm #確認画面
+  def confirm # 確認画面
     if request.post?
       @inquiry = Inquiry.new(inquiry_params)
       if @inquiry.save
@@ -17,7 +17,7 @@ class InquiryController < ApplicationController
     end
   end
 
-  def complete #完了画面
+  def complete # 完了画面
     if request.patch?
       @inquiry = Inquiry.new(inquiry_params)
       if InquiryMailer.received_email(@inquiry).deliver
@@ -31,6 +31,7 @@ class InquiryController < ApplicationController
   end
 
   private
+
   def inquiry_params
     params.require(:inquiry).permit(:name, :email, :message)
   end
