@@ -61,7 +61,7 @@ Rails.application.configure do
 
   # ActionController-Gmail
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = {:host => "3.112.253.61;"}
+  config.action_mailer.default_url_options = {:host => "3.112.253.61"}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:  "smtp.gmail.com",
