@@ -5,5 +5,5 @@
     <%= link_to post.favorites.count, post_favorites_path(post), method: :post, remote: true, class: "fas fa-heart like-btn-unlike" %>
   <% end %>
 <% else %>
-  <i class="fas fa-heart like-btn"><%= post.favorites.count %></i>
+  <%= link_to post.favorites.count, new_user_session_path, class: "fas fa-heart like-btn" %>
 <% end %>
