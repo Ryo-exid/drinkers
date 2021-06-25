@@ -70,6 +70,7 @@ Rails.application.configure do
     user_name: ENV["APPLICATION_EMAIL"],
     password: ENV["APPLICATION_PASSWORD"],
     authentication: "plain",
+    openssl_verify_mode: 'none',
     enable_starttls_auto: true
   }
 end
