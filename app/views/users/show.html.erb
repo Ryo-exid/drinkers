@@ -12,7 +12,7 @@
     <div class="user-profile">
       <div class="row">
         <div class="col-md-6">
-          <%= attachment_image_tag @user, :profile_image, size:"200x200", fallback: "no_image.jpg", class:"mt-3 rounded-circle d-block mx-auto" %>
+          <%= attachment_image_tag @user, :profile_image, size: "200x200", fallback: "no_image.jpg", class: "mt-3 rounded-circle d-block mx-auto" %>
         </div>
         <div class="col-6">
           <div class="form-inline user-contents-group">
@@ -37,14 +37,12 @@
         </div>
       </div>
 
-      <% if user_signed_in? %>
-        <div class="follow_btn text-right col-md-9 mt-5">
-          <%= render "relationships/follow-btn", user: @user %>
-        </div>
-      <% end %>
+      <div class="follow_btn text-right col-md-9 mt-5">
+        <%= render "relationships/follow-btn", user: @user %>
+      </div>
 
-      <p class="introduction col-3 text-right">自己紹介</p>
-      <div class="introduction-border col-md-8">
+      <p class="introduction col-3 text-right mt-5">自己紹介</p>
+      <div class="introduction-border col-md-8 mb-5">
         <h4><%= simple_format(@user.introduction) %></h4>
       </div>
 

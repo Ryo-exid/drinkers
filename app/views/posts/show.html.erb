@@ -5,7 +5,14 @@
       <div class="col-md-4">
         <%= attachment_image_tag @post, :post_image, format: "jpeg", size: "330x400", class: "img-responsive rounded d-block mx-auto" %>
       </div>
+
       <div class="col-md-7">
+        <div class="form-inline">
+          <div class="col-md-4 post-show-contents">投稿者</div>
+          <div class="col-md-8 post-show-input"><%= link_to @post.user.name, user_path(@post.user) %></div>
+        </div>
+        <hr>
+
         <div class="form-inline">
           <div class="col-md-4 post-show-contents">タイトル</div>
           <div class="col-md-8 post-show-input"><%= @post.title %></div>
@@ -21,12 +28,6 @@
         <div class="form-inline">
           <div class="col-md-4 post-show-contents">場所</div>
           <div class="col-md-8 post-show-input"><%= @post.location %></div>
-        </div>
-        <hr>
-
-        <div class="form-inline">
-          <div class="col-md-4 post-show-contents">投稿者</div>
-          <div class="col-md-8 post-show-input"><%= @post.user.name %></div>
         </div>
         <hr>
 
