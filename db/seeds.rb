@@ -8,7 +8,8 @@
     address_city: "台東区",
     address_street: "1-1-1",
     address_building: "111",
-    password: "111111"
+    password: "111111",
+    password_confirmation: "111111"
   )
 end
 
@@ -23,6 +24,7 @@ end
   address_street: "1-1-1",
   address_building: "drinker",
   password: ENV["ADMIN_PASSWORD"],
+  password_confirmation: ENV["ADMIN_PASSWORD"],
   admin: true
   )
 end
