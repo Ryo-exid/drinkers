@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
 
-  validates :name, { presence: { message: "を入力してください（20文字以内）" }, length: { maximum: 20 } }
+  validates :name, { presence: { message: "を入力してください（30文字以内）" }, length: { maximum: 30 } }
   validates :birth_date, :address_city, :address_street, :address_building, presence: true, on: :create
   validates :postcode, length: { is: 7 }, on: :create
   validates :postcode, numericality: { only_integer: true }, on: :create
