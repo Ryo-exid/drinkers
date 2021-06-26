@@ -118,5 +118,19 @@ RSpec.describe "Userモデルのテスト", type: :model do
         expect(User.reflect_on_association(:rooms).macro).to eq :has_many
       end
     end
+
+    context "Notificationモデルとの関係" do
+      it "1:Nとなっている" do
+        expect(User.reflect_on_association(:active_notifications).macro).to eq :has_many
+        expect(User.reflect_on_association(:passive_notifications).macro).to eq :has_many
+      end
+    end
+
+    context "Relationshipモデルとの関係" do
+      it "1:Nとなっている" do
+        expect(User.reflect_on_association(:followers).macro).to eq :has_many
+        expect(User.reflect_on_association(:followings).macro).to eq :has_many
+      end
+    end
   end
 end
