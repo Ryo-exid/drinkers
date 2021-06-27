@@ -65,7 +65,7 @@
 - テスト
   - RSpec
 - デバッグ
- - pry-rails
+  - pry-rails
 - デプロイ
   - EC2、RDS
 - README
