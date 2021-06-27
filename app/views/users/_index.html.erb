@@ -1,22 +1,24 @@
 <div class="container">
   <% users.each do |user| %>
-    <div class="row">
-      <div class="col-md-2 mr-3 text-center">
-        <%= link_to user_path(user) do %>
-          <%= attachment_image_tag user, :profile_image, size:"60x60", fallback: "no_image.jpg", class:"rounded-circle" %><br>
-          <span style="overflow-wrap: break-word;"><%= user.name %>
-        <% end %>
+    <% unless user.admin %>
+      <div class="row">
+        <div class="col-md-2 mr-3 text-center">
+          <%= link_to user_path(user) do %>
+            <%= attachment_image_tag user, :profile_image, size:"60x60", fallback: "no_image.jpg", class:"rounded-circle" %><br>
+            <span style="overflow-wrap: break-word;"><%= user.name %>
+          <% end %>
+        </div>
+        <div class="col-md-5 mt-1" style="overflow-wrap: break-word;">
+          <h5 class="user-index-introduction"><%= simple_format(user.introduction) %></h5>
+        </div>
+        <div class="col-md-2 mx-auto d-flex align-items-center" style="white-space: nowrap;">
+          <p>フォロー数: <%= user.followings.count %></p>
+        </div>
+        <div class="col-md-2 mx-auto d-flex align-items-center" style="white-space: nowrap;">
+          <p>フォロワー数: <%= user.followers.count %></p>
+        </div>
       </div>
-      <div class="col-md-5 mt-1" style="overflow-wrap: break-word;">
-        <h5 class="user-index-introduction"><%= simple_format(user.introduction) %></h5>
-      </div>
-      <div class="col-md-2 mx-auto d-flex align-items-center" style="white-space: nowrap;">
-        <p>フォロー数: <%= user.followings.count %></p>
-      </div>
-      <div class="col-md-2 mx-auto d-flex align-items-center" style="white-space: nowrap;">
-        <p>フォロワー数: <%= user.followers.count %></p>
-      </div>
-    </div>
-    <hr>
+      <hr>
+    <% end %>
   <% end %>
 </div>
