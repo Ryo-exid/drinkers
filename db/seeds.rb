@@ -1,97 +1,50 @@
-# エンドユーザ
-3.times do |n|
-  User.create!(
-    name: "User#{n + 1}",
-    birth_date: "1996-1-1",
-    email: "test#{n + 1}@test.com",
-    postcode: 1111111,
-    address_city: "台東区",
-    address_street: "1-1-1",
-    address_building: "111",
-    password: "111111",
-    password_confirmation: "111111"
-  )
-end
+# エンドユーザ(本番用)
+User.create!(
+  name: "Ryo",
+  birth_date: "1996-1-1",
+  email: "Ryo@ryo.com",
+  postcode: 1510061,
+  address_city: "渋谷区初台",
+  address_street: "1-4-7",
+  address_building: "AAA",
+  password: "111111",
+  password_confirmation: "111111"
+)
 
 # 管理者権限を持たせたユーザ（管理人）
-1.times do |n|
-  User.create!(
+User.create!(
   name: ENV["ADMIN_NAME"],
-  birth_date: "1996-1-1",
+  birth_date: "1996-10-1",
   email: ENV["ADMIN_EMAIL"],
-  postcode: 1111111,
-  address_city: "台東区",
-  address_street: "1-1-1",
+  postcode: 3333333,
+  address_city: "埼玉県川口市",
+  address_street: "1-5-9",
   address_building: "drinker",
   password: ENV["ADMIN_PASSWORD"],
   password_confirmation: ENV["ADMIN_PASSWORD"],
   admin: true
-  )
-end
+)
 
-# 投稿サンプル
-2.times do |n|
-  Post.create!(
-    user_id: 1,
-    title: "焼き芋焼酎#{n + 1}",
-    post_image: File.open("./app/assets/images/alcohol4.jpg"),
-    caption: "焼酎好きに教えてもらいましたー！香ばしくて美味しい！",
-    rate: 4.5,
-    location: "渋谷",
-  )
-end
+# 管理者権限を持たせたユーザ（サブ）
+User.create!(
+  name: ENV["ADMIN_SUB_NAME"],
+  birth_date: "1996-10-1",
+  email: ENV["ADMIN_SUB_EMAIL"],
+  postcode: 3333333,
+  address_city: "埼玉県川口市",
+  address_street: "1-5-9",
+  address_building: "drinker",
+  password: ENV["ADMIN_SUB_PASSWORD"],
+  password_confirmation: ENV["ADMIN_SUB_PASSWORD"],
+  admin: true
+)
 
-3.times do |n|
-  Post.create!(
-    user_id: 2,
-    title: "Barで飲んでます#{n + 1}",
-    post_image: File.open("./app/assets/images/alcohol6.jpg"),
-    caption: "おいしい",
-    rate: 3.5,
-    location: "新宿",
-  )
-end
-
-3.times do |n|
-  Post.create!(
-    user_id: 1,
-    title: "GODIVA！#{n + 1}",
-    post_image: File.open("./app/assets/images/alcohol1.jpg"),
-    caption: "GODIVAのリキュール飲んでみました！",
-    rate: 3,
-    location: "渋谷",
-  )
-end
-
-4.times do |n|
-  Post.create!(
-    user_id: 2,
-    title: "魔王！！#{n + 1}",
-    post_image: File.open("./app/assets/images/alcohol2.jpg"),
-    caption: "最高級焼酎！美味い！！！",
-    rate: 5,
-    location: "新宿",
-  )
-end
-
-3.times do |n|
-  Post.create!(
-    user_id: 3,
-    title: "十四代！！#{n + 1}",
-    post_image: File.open("./app/assets/images/alcohol3.jpg"),
-    caption: "1杯で1500円！",
-    rate: 4,
-    location: "新宿",
-  )
-end
-
-2.times do |n|
-  Post.create!(
-    user_id: 1,
-    title: "やっぱりビール！！#{n + 1}",
-    post_image: File.open("./app/assets/images/alcohol5.jpg"),
-    caption: "仕事終わりキンキンに冷えたビール！最高です！！！",
-    rate: 5,
-    location: "渋谷",
-  )
-end
+# 投稿サンプル（本番用）
+Post.create!(
+  user_id: 1,
+  title: "やっぱりビール！！",
+  post_image: File.open("./app/assets/images/alcohol5.jpg"),
+  caption: "居酒屋限定のKIRINプレミアムビール！こんなにフルーティーで美味しいビール初めて飲みました！最っっ高です！！！",
+  rate: 5,
+  location: "赤坂",
+)
