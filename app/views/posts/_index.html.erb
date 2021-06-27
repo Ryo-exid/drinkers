@@ -10,7 +10,7 @@
       <hr style="margin: 0;">
       <%= link_to post.title, post_path(post), data: {"turbolinks"=>false}, class: "post-title fas fa-hand-point-right mt-1" %>
       <div class="post-background-img">
-        <%= attachment_image_tag post, :post_image, format: "jpeg", size: "350x400", class: "rounded d-block mx-auto" %>
+        <%= attachment_image_tag post, :post_image, format: "jpeg", size: "350x450", class: "rounded d-block mx-auto" %>
       </div>
       <h4 class="post-caption"><%= simple_format(post.caption) %></h4>
       <div class="post-bottom-contents">
