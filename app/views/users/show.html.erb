@@ -23,46 +23,38 @@
             <div class="col-md-3 user-show-contents">投稿数</div>
             <div class="col-md-3 content-count"><%= @user.posts.count %></div>
           </div>
-
           <div class="form-inline user-contents-group">
             <div class="col-md-3 user-show-contents">フォロー</div>
             <div class="col-md-3 content-count"><%= link_to @user.followings.count, user_followings_path(@user) %></div>
           </div>
-
           <div class="form-inline user-contents-group">
             <div class="col-md-3 user-show-contents">フォロワー</div>
             <div class="col-md-3 content-count"><%= link_to @user.followers.count, user_followers_path(@user) %></div>
           </div>
-
           <div class="form-inline user-contents-group">
             <div class="col-md-3 user-show-contents">総いいね数</div>
             <div class="col-md-3 content-count"><%= @user.favorites.count %></div>
           </div>
         </div>
       </div>
-
       <div class="follow_btn text-right col-md-9 mt-5">
         <%= render "relationships/follow-btn", user: @user %>
       </div>
-
       <p class="introduction col-3 text-right mt-5">自己紹介</p>
       <div class="introduction-border col-md-8 mb-5">
         <h4><%= simple_format(@user.introduction) %></h4>
       </div>
-
       <% if user_signed_in? %>
         <% if @user.id == current_user.id %>
           <div class="text-center my-5">
             <%= link_to "編集する", edit_user_path(current_user.id), class: "btn btn-lg btn-outline-success" %>
           </div>
         <% end %>
-
         <%if @user.is_deleted == true %>
           <div class="text-right my-5">
             <span class="btn btn-secondary">退会済み</span>
           </div>
         <% end %>
-
         <% if current_user.admin? && @user.id != current_user.id && @user.is_deleted == false %>
           <hr class="my-5">
           <div class="text-right my-5">
