@@ -23,14 +23,17 @@
             <div class="col-md-3 user-show-contents">投稿数</div>
             <div class="col-md-3 content-count"><%= @user.posts.count %></div>
           </div>
+          
           <div class="form-inline user-contents-group">
             <div class="col-md-3 user-show-contents">フォロー</div>
             <div class="col-md-3 content-count"><%= link_to @user.followings.count, user_followings_path(@user) %></div>
           </div>
+          
           <div class="form-inline user-contents-group">
             <div class="col-md-3 user-show-contents">フォロワー</div>
             <div class="col-md-3 content-count"><%= link_to @user.followers.count, user_followers_path(@user) %></div>
           </div>
+          
           <div class="form-inline user-contents-group">
             <div class="col-md-3 user-show-contents">総いいね数</div>
             <div class="col-md-3 content-count"><%= @user.favorites.count %></div>

@@ -25,7 +25,6 @@
         <%= f.submit "変更する", class: "btn-lg btn btn-outline-success" %>
       </div>
     </div>
-
     <% if user_signed_in? && @user.id == current_user.id && @user.admin == false %>
       <hr class="mt-5">
       <div class="form-group row justify-content-end col-md-11">
