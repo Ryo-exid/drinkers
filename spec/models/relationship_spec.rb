@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Relationshipモデルのテスト", type: :model do
-
   describe "アソシエーションのテスト" do
     context "Userモデルとの関係" do
       it "N:1となっている" do

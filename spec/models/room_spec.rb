@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Roomモデルのテスト", type: :model do
-
   describe "アソシエーションのテスト" do
     context "Chatモデルとの関係" do
       it "1:Nとなっている" do

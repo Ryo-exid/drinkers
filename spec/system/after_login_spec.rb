@@ -5,17 +5,17 @@ describe "ユーザログイン後のテスト" do
   let!(:other_user) { create(:user) }
   let(:post) { create(:post, user: user) }
   let!(:other_post) { create(:post, user: other_user) }
-  
+
   before do
     visit new_user_session_path
     fill_in "user[name]", with: user.name
     fill_in "user[password]", with: user.password
     click_button "ログイン"
   end
-  
+
   describe "headerのテスト: ログインしている場合" do
     subject { current_path }
-    
+
     context "表示内容の確認" do
       it "タイトルが表示される" do
         expect(page).to have_content "Drinker × Drinker"
@@ -70,12 +70,12 @@ describe "ユーザログイン後のテスト" do
       end
     end
   end
-  
+
   describe "ユーザログアウトのテスト" do
     before do
       click_link "ログアウト"
     end
-    
+
     context "ログアウト機能のテスト" do
       it "正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する" do
         about_link = find_all("a")[1].native.inner_text
@@ -86,12 +86,12 @@ describe "ユーザログイン後のテスト" do
       end
     end
   end
-  
+
   describe "投稿一覧画面のテスト" do
     before do
       visit posts_path
     end
-    
+
     context "表示内容の確認" do
       it "URLが正しい" do
         expect(current_path).to eq "/posts"
@@ -127,14 +127,14 @@ describe "ユーザログイン後のテスト" do
       end
     end
   end
-  
+
   describe "新規投稿画面のテスト" do
     before do
       visit posts_path
       click_link "Create"
       visit new_post_path
     end
-    
+
     context "表示内容の確認" do
       it "URLが正しい" do
         expect(current_path).to eq "/posts/new"

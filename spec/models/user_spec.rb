@@ -55,7 +55,7 @@ RSpec.describe "Userモデルのテスト", type: :model do
     context "postcodeカラム" do
       it "数値のみであること" do
         user.postcode = Faker::Number.number(7)
-        expect(user.postcode.is_a? Integer).to be_truthy
+        expect(user.postcode.is_a?(Integer)).to be_truthy
       end
 
       it "7文字であること" do

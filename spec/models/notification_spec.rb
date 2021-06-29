@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Notificationモデルのテスト", type: :model do
-
   describe "アソシエーションのテスト" do
     context "Postモデルとの関係" do
       it "N:1となっている" do
