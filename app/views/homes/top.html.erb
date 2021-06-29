@@ -15,7 +15,7 @@
                   <div class="ranking-post-box">
                     <div class="ml-3 form-inline">
                       <%= link_to user_path(post.user) do %>
-                        <%= attachment_image_tag post.user, :profile_image, size: "60x60", fallback: "no_image.jpg", class:"rounded-circle mr-4" %>
+                        <%= attachment_image_tag post.user, :profile_image, size: "60x60", fallback: "no_image.jpg", data: {"turbolinks"=>false}, class:"rounded-circle mr-4" %>
                       <% end %>
                       <p class="ranking-user-name mt-3"><%= post.user.name%></p>
                       <%= link_to post.title, post_path(post), data: {"turbolinks"=>false}, class: "ranking-post-title fas fa-hand-point-right mt-1" %>
