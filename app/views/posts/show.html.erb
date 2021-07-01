@@ -46,6 +46,11 @@
           <%= render "favorites/favorite-btn", post: @post %>
         </div>
         <hr>
+        <div class="tag-box">
+          <% @post.tags.each do |tag| %>
+            <span class="ai-label"><%= tag.name %></span>
+          <% end %>
+        </div>
         <% if @post.user == current_user %>
           <div class="text-right">
             <%= link_to "編集する", edit_post_path(@post), data: {"turbolinks"=>false}, class: "btn btn-outline-info" %>

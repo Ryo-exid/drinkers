@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :tags, dependent: :destroy
 
   validates :post_image, presence: { message: 'を選択してください' }
   validates :title, { presence: true, length: { maximum: 30 } }
@@ -73,5 +74,25 @@ class Post < ApplicationRecord
       notification.checked = true
     end
     notification.save if notification.valid?
+  end
+
+  # Vision API (画像認識)
+  after_create :create_tags
+
+  def create_tags
+    vision_tags = Vision.get_image_data(self.post_image)
+    vision_tags.each do |tag|
+      tags.create(name: tag)
+    end
+  end
+
+  after_update :update_tags
+
+  def update_tags
+    vision_tags = Vision.get_image_data(self.post_image)
+    tags.destroy_all # updateでは配列がさらに重複
+    vision_tags.each do |tag|
+      tags.create(name: tag)
+    end
   end
 end
