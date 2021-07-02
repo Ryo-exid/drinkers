@@ -80,7 +80,7 @@ class Post < ApplicationRecord
   after_create :create_tags
 
   def create_tags
-    vision_tags = Vision.get_image_data(self.post_image)
+    vision_tags = Vision.get_image_data(post_image)
     vision_tags.each do |tag|
       tags.create(name: tag)
     end
@@ -89,7 +89,7 @@ class Post < ApplicationRecord
   after_update :update_tags
 
   def update_tags
-    vision_tags = Vision.get_image_data(self.post_image)
+    vision_tags = Vision.get_image_data(post_image)
     tags.destroy_all # updateでは配列がさらに重複
     vision_tags.each do |tag|
       tags.create(name: tag)
