@@ -7,12 +7,14 @@
         <%= f.label :profile_image, '画像 ', class: "col-md-3 user-form-label" %>
         <%= f.attachment_field :profile_image, class: "ml-3 mt-2" %>
       </div>
+      
       <div class="form-group row">
         <%= f.label :name, "ユーザ名 ", class: "col-md-3 user-form-label" %>
         <div class="col-md-9">
           <%= f.text_field :name, class: "form-control mt-2" %>
         </div>
       </div>
+      
       <div class="form-group row">
         <%= f.label :introduction, "自己紹介 ", class: "col-md-3 user-form-label" %>
         <div class="col-md-9">
