@@ -7,10 +7,10 @@ module Vision
     def get_image_data(image_file)
       # APIのURL作成
       api_url = "https://vision.googleapis.com/v1/images:annotate?key=#{ENV['GOOGLE_API_KEY']}"
-
+      
       # 画像をbase64にエンコード
       base64_image = Base64.encode64(open("#{Rails.root}/public/uploads/#{image_file.id}").read)
-
+      
       # APIリクエスト用のJSONパラメータ
       params = {
         requests: [{
@@ -24,7 +24,7 @@ module Vision
           ],
         }],
       }.to_json
-
+      
       # Google Cloud Vision APIにリクエスト
       uri = URI.parse(api_url)
       https = Net::HTTP.new(uri.host, uri.port)
