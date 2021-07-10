@@ -5,18 +5,18 @@ class Post < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :tags, dependent: :destroy
-  
+
   validates :post_image, presence: { message: 'を選択してください' }
   validates :title, { presence: true, length: { maximum: 30 } }
   validates :caption, { presence: true, length: { maximum: 140 } }
   validates :rate, presence: { message: 'を設定してください' }
   validates :location, { presence: true, length: { maximum: 20 } }
-  
+
   # いいね機能
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
-  
+
   # 投稿タイトル/場所検索機能
   def self.looks(search, word)
     if search == "perfect_match"
@@ -31,12 +31,12 @@ class Post < ApplicationRecord
       @post = Post.all
     end
   end
-  
+
   # ランキング機能
   def self.create_all_ranks
     Post.find(Favorite.group(:post_id).order("count(post_id) desc").limit(8).pluck(:post_id))
   end
-  
+
   # 通知機能
   def create_notification_by(current_user)
     notification = current_user.active_notifications.new(
@@ -44,13 +44,13 @@ class Post < ApplicationRecord
       visited_id: user_id,
       action: "favorite"
     )
-    
+
     if notification.visiter_id == notification.visited_id
       notification.checked = true
     end
     notification.save if notification.valid?
   end
-  
+
   def create_notification_comment!(current_user, post_comment_id)
     # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
     temp_ids = PostComment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
@@ -60,7 +60,7 @@ class Post < ApplicationRecord
     # まだ誰もコメントしていない場合は、投稿者に通知を送る
     save_notification_comment!(current_user, post_comment_id, user_id) if temp_ids.blank?
   end
-  
+
   def save_notification_comment!(current_user, post_comment_id, visited_id)
     # コメントは複数回することが考えられるため、１つの投稿に複数回通知する
     notification = current_user.active_notifications.new(
@@ -75,19 +75,19 @@ class Post < ApplicationRecord
     end
     notification.save if notification.valid?
   end
-  
+
   # Vision API (画像認識)
   after_create :create_tags
-  
+
   def create_tags
     vision_tags = Vision.get_image_data(post_image)
     vision_tags.each do |tag|
       tags.create(name: tag)
     end
   end
-  
+
   after_update :update_tags
-  
+
   def update_tags
     vision_tags = Vision.get_image_data(post_image)
     tags.destroy_all # updateでは配列がさらに重複
