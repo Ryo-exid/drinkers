@@ -3,13 +3,15 @@ class FavoritesController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @favorite = @post.favorites.create(user_id: current_user.id)
-    @favorite.save
-    # 通知の作成
-    @post.create_notification_by(current_user)
-    respond_to do |format|
-      format.html { redirect_to request.referrer }
-      format.js
+    if @post.user_id != current_user.id #自分の投稿以外にいいねが可能
+      @favorite = @post.favorites.create(user_id: current_user.id)
+      @favorite.save
+      # 通知の作成
+      @post.create_notification_by(current_user)
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.js
+      end
     end
   end
 
