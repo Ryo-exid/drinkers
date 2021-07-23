@@ -179,6 +179,17 @@ img post-image {
 }
 
 // ユーザが入力した投稿内容
+.post-show-input {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow-wrap: break-word;
+}
+
+// ユーザが入力した投稿内容（改行された投稿）
 .post-show-input p {
   font-family: serif;
   font-weight: bold;
