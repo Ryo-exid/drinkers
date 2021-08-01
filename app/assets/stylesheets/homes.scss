@@ -189,3 +189,29 @@
   color: #FFFF00;
   white-space: nowrap;
 }
+
+@media screen and (max-width:900px) {
+  .application-title-top {
+    font-size: 4rem;
+    white-space: nowrap;
+  }
+
+  .application-title-sub {
+    font-size: 1.5rem;
+  }
+
+  .ranking-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .application-title-top {
+    font-size: 2.8rem;
+    white-space: nowrap;
+  }
+
+  .application-title-sub {
+    font-size: 1.2rem;
+  }
+}
