@@ -80,3 +80,20 @@
   font-weight: 500;
   overflow-wrap: break-word;
 }
+
+@media screen and (max-width:768px) {
+
+  .user-profile .col-md-6 {
+    width: auto;
+  }
+  .user-profile-name {
+    margin: 30px 0 0 0;
+    font-size: 60px;
+  }
+
+  .form-inline.user-contents-group {
+    flex-flow: nowrap;
+    width: 240px;
+    padding-left: 20px;
+  }
+}
