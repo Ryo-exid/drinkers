@@ -186,10 +186,21 @@ select {
   white-space: nowrap;
 }
 
+// 新規ユーザ登録画面の新規登録という文字
+.registratons-title {
+  white-space: nowrap;
+  margin-left: 140px;
+}
+
 @media screen and (max-width:768px) {
   .login-form {
     width: 80%;
     margin: 0 auto;
+  }
+
+  .registratons-title {
+    white-space: nowrap;
+    margin-left: 0;
   }
 }
 
@@ -197,6 +208,9 @@ select {
   // ログイン画面のログインという文字
   .login-title {
     margin-left: 30px;
+  }
+
+  .registratons-page {
   }
 }
 
