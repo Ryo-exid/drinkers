@@ -205,6 +205,13 @@
   }
 }
 
+@media screen and (max-width:768px) {
+  .ranking-caption p {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
 @media screen and (max-width:500px) {
   .application-title-top {
     font-size: 2.5rem;
@@ -218,5 +225,10 @@
   .ranking-title {
     font-size: 2.1rem;
     margin-left: 1.5rem;
+  }
+
+  .ranking-caption p {
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
