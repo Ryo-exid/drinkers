@@ -251,14 +251,22 @@ img post-image {
 }
 
 @media screen and (max-width:425px) {
+  .post-index-page {
+    width: 100%;
+  }
   .new-arrival-title {
     font-size: 45px;
     margin-top: 10px;
     margin-left: 10px;
   }
 
-  // btn-lg
-  a.btn-lg {
+  // 投稿一覧ページのCreateボタン
+  .post-index-page a.btn-lg {
     font-size: 0.8rem;
+  }
+
+  // Createボタン要素の範囲
+  .create-button {
+    margin: 0;
   }
 }
