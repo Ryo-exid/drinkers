@@ -235,3 +235,16 @@ img post-image {
   margin-bottom: 0.5rem;
   overflow-wrap: break-word;
 }
+
+@media screen and (max-width:768px) {
+  .new-arrival-title {
+    font-size: 50px;
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width:425px) {
+  .new-arrival-title {
+    font-size: 45px;
+    margin-top: 10px;
+  }
+}
