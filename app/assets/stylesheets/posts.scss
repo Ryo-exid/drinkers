@@ -243,6 +243,11 @@ img post-image {
     text-align: left;
     margin-left: 40px;
   }
+
+  // 768px以下の時には検索のセレクトタグ及び検索ボタンを表示しない
+  select#range, select#search, input.btn-sm {
+    display: none;
+  }
 }
 @media screen and (max-width:425px) {
   .new-arrival-title {
