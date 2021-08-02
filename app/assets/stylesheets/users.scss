@@ -91,9 +91,31 @@
     font-size: 60px;
   }
 
+  // プロフィール画像から.user-contents-groupまでの範囲
   .form-inline.user-contents-group {
     flex-flow: nowrap;
     width: 240px;
     padding-left: 20px;
+  }
+}
+
+@media screen and (max-width:576px) {
+  // flexboxを解除し、プロフィール画像を中央に配置
+  .user-profile .row{
+    display: block;
+  }
+
+  .user-profile-name {
+    margin: 40px 0 0 0;
+  }
+
+  .form-inline.user-contents-group {
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+  }
+
+  // .user-contents-groupの範囲
+  .user-profile .col-sm-6 {
+    margin-top: 25px;
   }
 }
