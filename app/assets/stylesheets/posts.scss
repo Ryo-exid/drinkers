@@ -249,10 +249,16 @@ img post-image {
     display: none;
   }
 }
+
 @media screen and (max-width:425px) {
   .new-arrival-title {
     font-size: 45px;
     margin-top: 10px;
     margin-left: 10px;
+  }
+
+  // btn-lg
+  a.btn-lg {
+    font-size: 0.8rem;
   }
 }
