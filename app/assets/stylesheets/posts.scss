@@ -240,11 +240,14 @@ img post-image {
   .new-arrival-title {
     font-size: 50px;
     margin-top: 15px;
+    text-align: left;
+    margin-left: 40px;
   }
 }
 @media screen and (max-width:425px) {
   .new-arrival-title {
     font-size: 45px;
     margin-top: 10px;
+    margin-left: 10px;
   }
 }
