@@ -105,12 +105,11 @@
   color: orange;
 }
 
-星の大きさ
+// 星の大きさ
 .ranking-star img {
   width: 5%;
   height: 35px;
   margin-bottom: 13px;
-
 }
 
 .like-btn {
@@ -214,6 +213,21 @@
   .ranking-post-title {
     margin-right: 15px;
   }
+
+  .ranking-location {
+    margin-right: 15px;
+  }
+
+  .ranking-star img {
+    width: 7%;
+    height: 26px;
+    margin-bottom: 13px;
+  }
+
+  .ranking-review.col-md-12 {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 @media screen and (max-width:500px) {
@@ -234,5 +248,11 @@
   .ranking-caption p {
     margin-right: 10px;
     margin-left: 10px;
+  }
+
+  .ranking-star img {
+    width: 8%;
+    height: 26px;
+    margin-bottom: 13px;
   }
 }
