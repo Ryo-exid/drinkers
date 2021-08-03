@@ -192,6 +192,10 @@ select {
   margin-left: 140px;
 }
 
+.password-confirmation-label {
+  white-space: nowrap;
+}
+
 @media screen and (max-width:768px) {
   .login-form {
     width: 80%;
