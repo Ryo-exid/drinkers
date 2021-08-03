@@ -8,7 +8,7 @@
             <div class="font-italic">
               <div class="field form-inline mt-5">
                 <%= f.label "ユーザ名", class: "col-md-4" %>
-                <%= f.text_field :name, autofocus: true, class: "form-control col-md-7" %>
+                <%= f.text_field :name, autofocus: true, class: "form-control col-md-6 w-100" %>
               </div>
 
               <div class="field form-inline mt-3">
@@ -18,7 +18,7 @@
 
               <div class="field form-inline mt-3">
                 <%= f.label "郵便番号", class: "col-md-4" %>
-                <%= f.text_field :postcode, class: 'form-control col-md-7' %>
+                <%= f.text_field :postcode, class: 'form-control col-md-6 w-100' %>
               </div>
 
               <div class="field form-inline mt-3">
@@ -28,32 +28,32 @@
 
               <div class="field form-inline mt-3">
                 <%= f.label :address_city, "市区町村", class: "col-md-4" %>
-                <%= f.text_field :address_city, class: 'form-control col-md-7' %>
+                <%= f.text_field :address_city, class: 'form-control col-md-6 w-100' %>
               </div>
 
               <div class="field form-inline mt-3">
                 <%= f.label :address_street, "番地", class: "col-md-4" %>
-                <%= f.text_field :address_street, class: 'form-control col-md-7' %>
+                <%= f.text_field :address_street, class: 'form-control col-md-6 w-100' %>
               </div>
 
               <div class="field form-inline mt-3">
                 <%= f.label "建物名", class: "col-md-4" %>
-                <%= f.text_field :address_building , class: 'form-control col-md-7' %>
+                <%= f.text_field :address_building , class: 'form-control col-md-6 w-100' %>
               </div>
 
               <div class="field form-inline mt-3">
                 <%= f.label :email, class: "col-md-4" %>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control col-md-7' %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control col-md-6 w-100' %>
               </div>
 
               <div class="field form-inline mt-3">
                 <%= f.label "パスワード", class: "col-md-4" %>
-                <%= f.password_field :password, autocomplete: "new-password",class: 'form-control col-md-7' %>
+                <%= f.password_field :password, autocomplete: "new-password",class: 'form-control col-md-6 w-100' %>
               </div>
 
               <div class="field form-inline mt-3">
                 <%= f.label :password_confirmation, class: "col-md-4 password-confirmation-label" %>
-                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control col-md-7' %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control col-md-6' %>
               </div>
             </div>
             <div class="actions col-md-11 text-right mt-5">
