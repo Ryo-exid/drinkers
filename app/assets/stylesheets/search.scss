@@ -33,7 +33,13 @@
     width: 13rem;
   }
 
+  // 検索画面見出し
   .search-heading {
     font-size: 2.4rem;
+  }
+
+  // 検索結果がなかった時の本文
+  .search-nothing-text h2 {
+    font-size: 1.5rem;
   }
 }
