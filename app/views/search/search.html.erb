@@ -15,8 +15,10 @@
                 <%= link_to 'Create', new_user_session_path, class: "btn-lg btn btn-outline-success mr-5", data: {"turbolinks"=>false} %>
               </div>
             <% end %>
-            <div class="d-flex flex-wrap justify-content-center">
-              <%= render "posts/index", posts: @posts %>
+            <div class="row">
+              <div class="d-flex justify-content-center">
+                <%= render "posts/index", posts: @posts %>
+              </div>
             </div>
             <div class="d-flex justify-content-center my-3">
               <%= paginate @posts %>
