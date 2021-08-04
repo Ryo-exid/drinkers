@@ -208,6 +208,12 @@ select {
   .login-title {
     margin-left: 30px;
   }
+
+  .notice {
+    padding: 0px;
+    left: 10px;
+    font-size: 0.7rem;
+  }
 }
 
 @media screen and (max-width:399px) {
