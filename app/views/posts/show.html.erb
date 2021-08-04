@@ -52,7 +52,7 @@
           <% end %>
         </div>
         <% if @post.user == current_user %>
-          <div class="text-right">
+          <div class="text-right mt-5 mb-3">
             <%= link_to "編集する", edit_post_path(@post), data: {"turbolinks"=>false}, class: "btn btn-outline-info" %>
             <%= link_to "削除する", post_path(@post), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-outline-danger ml-5"%>
           </dov>
@@ -73,7 +73,7 @@
         <div class="text-center">
           <%= form_with model: [@post, @post_comment], remote: true do |f| %>
             <%= f.text_area :comment, class: "form-control p-4 mt-4 col-md-10 mx-auto" %><br>
-            <%= f.submit "送信", class: "btn-lg btn btn-outline-primary" %>
+            <%= f.submit "送信", class: "btn-lg btn btn-outline-primary my-4" %>
           <% end %>
         </div>
         <% if current_user.admin? %>
