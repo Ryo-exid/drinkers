@@ -150,6 +150,7 @@
 
 // アバウトページの見出しの「Drinker×Drinker」
 .about-application-title {
+  white-space: nowrap;
   color: #FFFF00;
   text-shadow:
     1px 1px 0px #0000CD, -1px -1px 0px #0000CD,
@@ -228,6 +229,10 @@
     padding-right: 0;
     padding-left: 0;
   }
+
+  .about-application-heading {
+    font-size: 4.5rem;
+  }
 }
 
 @media screen and (max-width:500px) {
@@ -250,5 +255,8 @@
     height: 26px;
     margin-bottom: 13px;
   }
-}
 
+  .about-application-heading {
+    font-size: 2.8rem;
+  }
+}
