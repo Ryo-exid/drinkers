@@ -156,7 +156,7 @@ img post-image {
 // 新規投稿/投稿編集ページの星
 #star.form-group.row img {
   width: 4%;
-  height: 28px;
+  height: 33px;
 }
 
 // 星5個（一塊）
@@ -285,5 +285,10 @@ img post-image {
     width: 7%;
     height: 28px;
     margin-bottom: 11px;
+  }
+
+  #star.form-group.row img {
+    width: 7%;
+    height: 30px;
   }
 }
