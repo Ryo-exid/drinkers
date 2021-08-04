@@ -26,6 +26,15 @@
   .search_form {
     margin-right: 20px;
   }
+
+  .search-heading {
+    margin-bottom: 2rem;
+  }
+
+  // Createボタン
+  .search-page .btn-lg {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (max-width:425px) {
