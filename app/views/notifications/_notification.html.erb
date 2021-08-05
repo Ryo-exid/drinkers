@@ -1,21 +1,21 @@
 <div class"container">
   <div class="row">
     <div class="col-md-12">
-      <div class="user-view  text-left form-inline">
+      <div class="user-view form-inline">
         <% visiter = notification.visiter %>
         <% visited = notification.visited %>
         <% post = notification.post %>
-        <div class="col-md-2">
+        <div class="col-md-2 text-center">
           <%= link_to user_path(notification.visiter) do %>
             <%= attachment_image_tag visiter, :profile_image, size:"70x70", format: "jpeg", fallback: "no_image.jpg", class:"rounded-circle mr-4" %>
           <% end %>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-10 notification-text">
           <%= notification_form(notification) %>
           <span>
             <%= " (#{time_ago_in_words(notification.created_at)}前)" %>
             <% if !@post_comment.nil? %>
-              <h5 class="moderate-font text-center" style="color: #C0C0C0;"><%= simple_format(@post_comment) %></h5>
+              <h5 class="moderate-font text-center" style="color: #C0C0C0; margin-bottom: -1rem;"><%= simple_format(@post_comment) %></h5>
             <% end %>
           </span>
         </div>
