@@ -9,7 +9,7 @@
     <div class="col-md-7 d-flex align-items-center">
       <h5 class="post-show-comment"><%= simple_format(post_comment.comment) %></h5>
     </div>
-    <div class="col-md-1 d-flex align-items-end">
+    <div class="col-md-1 d-flex align-items-end comment-delete-button">
       <% if current_user == post_comment.user %>
         <%= link_to "削除", post_post_comment_path(post_comment.post_id, post_comment.id), remote: true, class: "btn-sm btn btn-outline-danger", method: :delete %>
       <% end %><br>

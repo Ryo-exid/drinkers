@@ -259,6 +259,17 @@ img post-image {
   .post-show-image {
     margin-bottom: 20px;
   }
+
+  .comment-delete-button {
+    margin-top: 0.5rem;
+    margin-left: 25rem;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .comment-delete-button {
+    margin-left: 22rem;
+  }
 }
 
 @media screen and (max-width:425px) {
@@ -290,5 +301,9 @@ img post-image {
   #star.form-group.row img {
     width: 7%;
     height: 30px;
+  }
+
+  .comment-delete-button {
+    margin-left: 17rem;
   }
 }
