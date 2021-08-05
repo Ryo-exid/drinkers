@@ -1,6 +1,7 @@
 // Place all the styles related to the notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .notifications-box {
   top: 50%;
   margin:0 auto;
@@ -22,4 +23,11 @@
   text-shadow: 3px 3px 10px #FFCC33	;
   color: #6600FF;
   white-space: nowrap;
+}
+
+@media screen and (max-width:768px) {
+  .notifications-page .profile_image {
+    width: 4rem;
+    height: 4rem;
+  }
 }
