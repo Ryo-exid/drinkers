@@ -55,6 +55,12 @@ p.chat-message {
   color: #00BB00;
 }
 
+@media screen and (max-width:768px) {
+  table th {
+    width: 50%;
+  }
+}
+
 @media screen and (max-width:425px) {
   .chat-heading {
     font-size: 30px;
