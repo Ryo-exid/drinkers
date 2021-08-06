@@ -54,7 +54,7 @@
         <% if @post.user == current_user %>
           <div class="text-right mt-5 mb-3">
             <%= link_to "編集する", edit_post_path(@post), data: {"turbolinks"=>false}, class: "btn btn-outline-info" %>
-            <%= link_to "削除する", post_path(@post), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-outline-danger ml-5"%>
+            <%= link_to "削除する", post_path(@post), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-outline-danger ml-5 mr-4"%>
           </dov>
         <% end %><br>
       </div>
