@@ -6,8 +6,8 @@
         <table class="message table">
           <thead>
             <tr>
-              <th class="text-left" style="font-size: 25px;"><%= @user.name %></th>
-              <th class="text-right" style="font-size: 25px; color: #00BB00;"><%= current_user.name %></th>
+              <th class="chat-partner-name"><%= @user.name %></th>
+              <th class="chat-my-name"><%= current_user.name %></th>
             </tr>
           </thead>
           <% @chats.each do |chat| %>
