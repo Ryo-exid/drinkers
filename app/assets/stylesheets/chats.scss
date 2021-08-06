@@ -49,6 +49,10 @@ th {
   color: #00BB00;
 }
 
+.chat-page table th {
+  width: 50%;
+}
+
 
 // 相手のダイレクトメッセージ
 .chat-partner-message {
@@ -68,7 +72,8 @@ p.chat-message {
 }
 
 @media screen and (max-width:768px) {
-  .chat-page table th {
+  // ダイレクトメッセージ入力欄
+  #chat_message.form-control {
     width: 50%;
   }
 }
@@ -88,13 +93,5 @@ p.chat-message {
 
   .chat-my-name {
     font-size: 20px;
-  }
-
-  .chat-partner-message {
-    font-size: 15px
-  }
-
-  p.chat-message {
-    font-size: 15px
   }
 }
