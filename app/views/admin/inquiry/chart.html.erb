@@ -4,11 +4,13 @@
     <div class="row">
       <div class="col-md-11 mx-auto">
         <% @inquiries.each do |inquiry| %>
-          <h4>ユーザ名: <%= inquiry.name %></h4>
-          <h4 class="my-3">メールアドレス: <%= inquiry.email %></h4>
-          <h4>【お問い合わせ内容】 <%= simple_format(inquiry.message) %></h4>
+          <div class="admin-inquiry-box">
+            <h4>ユーザ名: <%= inquiry.name %></h4>
+            <h4 class="my-3">メールアドレス: <%= inquiry.email %></h4>
+            <h4>【お問い合わせ内容】 <%= simple_format(inquiry.message) %></h4>
+          </div>
           <div class="text-right mt-3">
-            <%= link_to "削除する", admin_inquiry_destroy_path(inquiry), method: :delete, "data-confirm" => "お問い合わせ内容を本当に削除しますか？", class: "btn btn-warning" %>
+            <%= link_to "削除する", admin_inquiry_destroy_path(inquiry), method: :delete, "data-confirm" => "お問い合わせ内容を本当に削除しますか？", class: "btn btn-warning mr-3" %>
           </div>
           <hr>
         <% end %>
