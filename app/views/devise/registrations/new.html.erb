@@ -1,11 +1,11 @@
 <div class="registratons-page">
   <div class="container-fluid mt-5">
     <div class="row">
-      <div class="col-7 mx-auto">
-        <h2 class="font-weight-bolder registratons-title">新規登録</h2>
+      <div class="col-md-7 mx-auto">
+        <h2 class="font-weight-bolder registratons-title text-center">新規登録</h2>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
-            <div class="font-italic">
+            <div class="font-italic registratons-box">
               <div class="field form-inline mt-5">
                 <%= f.label "ユーザ名", class: "col-md-4" %>
                 <%= f.text_field :name, autofocus: true, class: "form-control col-md-6 w-100" %>
@@ -13,7 +13,9 @@
 
               <div class="field form-inline mt-3">
                 <%= f.label "生年月日", class: "col-md-4" %>
-                <%= f.date_select :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 20), default: Date.new(1996, 1, 1) %>
+                <span class="birth-date-select">
+                  <%= f.date_select :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 20), default: Date.new(1996, 1, 1) %>
+                </span>
               </div>
 
               <div class="field form-inline mt-3">
@@ -23,7 +25,9 @@
 
               <div class="field form-inline mt-3">
                 <%= f.label :prefecture_name, "都道府県", class: "col-md-4" %>
-                <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, { prompt: '選択してください' } %>
+                <span class="prefecture-select">
+                  <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, { prompt: '選択してください' } %>
+                <span>
               </div>
 
               <div class="field form-inline mt-3">

@@ -184,7 +184,6 @@ select {
 // 新規ユーザ登録画面の新規登録という文字
 .registratons-title {
   white-space: nowrap;
-  margin-left: 140px;
 }
 
 .password-confirmation-label {
@@ -207,7 +206,24 @@ select {
     white-space: nowrap;
     margin-left: 0;
   }
+
+  // ユーザ名からパスワード入力までの範囲（ラベルから入力欄まで）
+  .registratons-box {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
+
+@media screen and (max-width:768px) and (min-width:575px) {
+  .birth-date-select {
+    margin: 0 auto;
+  }
+
+  .prefecture-select {
+    margin: 0 auto;
+  }
+}
+
 
 @media screen and (max-width:425px) {
   // ログイン画面のログインという文字
