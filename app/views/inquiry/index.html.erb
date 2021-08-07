@@ -21,9 +21,9 @@
     <% end %>
     <% if user_signed_in? %>
       <% if current_user.admin? %>
-        <div class="text-right">
+        <div class="text-right w-100">
           <hr class="my-5">
-          <%= link_to "お問い合わせ一覧", admin_inquiry_chart_path, method: :get, class: "btn btn-warning" %>
+          <%= link_to "お問い合わせ一覧", admin_inquiry_chart_path, method: :get, class: "btn btn-warning mr-3 mb-5" %>
         </div>
       <% end %>
     <% end %>
