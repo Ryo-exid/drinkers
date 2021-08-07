@@ -230,6 +230,14 @@ select {
   .login-title {
     margin-left: 30px;
   }
+
+  .birth-date-select {
+    white-space: nowrap;
+  }
+
+  select {
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width:399px) {
