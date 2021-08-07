@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @media screen and (max-width:425px) {
+  // 管理者用お問い合わせ一覧画面見出し
+  .chart-heading {
+    text-align: center;
+    font-size: 32px;
+    white-space: nowrap;
+  }
+
+  // お問い合わせ内容のユーザ名、メールアドレス、お問い合わせ内容
   .admin-inquiry-box h4 {
     font-size: 20px;
   }
