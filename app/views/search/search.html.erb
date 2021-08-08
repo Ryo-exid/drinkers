@@ -8,11 +8,11 @@
           <% if @posts.exists? %>
             <% if user_signed_in? %>
               <div class="create-button">
-                <%= link_to 'Create', new_post_path, class: "btn-lg btn btn-outline-success mr-5", data: {"turbolinks"=>false} %>
+                <%= link_to 'Create', new_post_path, class: "btn-lg btn btn-outline-success", data: {"turbolinks"=>false} %>
               </div>
             <% else %>
               <div class="create-button">
-                <%= link_to 'Create', new_user_session_path, class: "btn-lg btn btn-outline-success mr-5", data: {"turbolinks"=>false} %>
+                <%= link_to 'Create', new_user_session_path, class: "btn-lg btn btn-outline-success", data: {"turbolinks"=>false} %>
               </div>
             <% end %>
             <div class="d-flex justify-content-center">

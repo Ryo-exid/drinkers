@@ -40,6 +40,11 @@
   .search-page .btn-lg {
     font-size: 0.8rem;
   }
+
+  // Createボタンを囲む要素
+  .search-page .create-button {
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width:425px) {
