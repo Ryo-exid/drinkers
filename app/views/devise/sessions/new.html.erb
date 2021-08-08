@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-6 mx-auto">
+    <div class="col-md-6 mx-auto mb-5">
       <h2 class="font-weight-bolder login-title">ログイン</h2>
       <div class='login-flash-message mt-4'>
         <%= flash[:notice] %>
@@ -21,7 +21,7 @@
           </div>
         </div>
       <% end %>
-      <div class="field col-md-6 text-left mt-3 mb-5 registrations-link-from-login">
+      <div class="field col-md-6 text-left mt-3 registrations-link-from-login">
         <%= link_to "新規登録はこちら", new_user_registration_path %>
       </div>
     </div>
