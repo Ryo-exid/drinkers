@@ -4,7 +4,7 @@
     <div class="search-heading col-md-5 mx-auto">投稿検索結果</div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-11 mx-auto">
+        <div class="col-md-10 search-posts mx-auto w-75">
           <% if @posts.exists? %>
             <% if user_signed_in? %>
               <div class="create-button">
@@ -15,8 +15,8 @@
                 <%= link_to 'Create', new_user_session_path, class: "btn-lg btn btn-outline-success mr-5", data: {"turbolinks"=>false} %>
               </div>
             <% end %>
-            <div class="row">
-              <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
+              <div class="row">
                 <%= render "posts/index", posts: @posts %>
               </div>
             </div>
