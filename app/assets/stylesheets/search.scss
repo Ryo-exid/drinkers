@@ -36,11 +36,6 @@
     margin-bottom: 2rem;
   }
 
-  // Createボタン
-  .search-page .btn-lg {
-    font-size: 0.8rem;
-  }
-
   // Createボタンを囲んでいる範囲
   .search-page .create-button {
     margin-right: 0;
@@ -65,5 +60,10 @@
   // 検索結果がなかった時の本文
   .search-nothing-text h2 {
     font-size: 1.5rem;
+  }
+
+  // Createボタン
+  .search-page .btn-lg {
+    font-size: 0.8rem;
   }
 }
