@@ -211,6 +211,11 @@ select {
     width: 80%;
     margin: 0 auto;
   }
+
+  // 「新規登録はこちら」リンク
+  .registrations-link-from-login {
+    display: none;
+  }
 }
 
 @media screen and (max-width:768px) and (min-width:575px) {
